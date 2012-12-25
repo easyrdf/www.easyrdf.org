@@ -1,0 +1,7 @@
+composer.phar
+/vendor/
+/coverage/
+/logs/*
+!/logs/.gitkeep
+/templates/cache/*
+!/templates/cache/.gitkeep

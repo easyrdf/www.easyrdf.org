@@ -1,0 +1,9 @@
+{
+  "name": "www.easyrdf.org",
+  "homepage": "http://www.easyrdf.org/",
+  "require": {
+    "php": ">=5.3.0",
+    "slim/slim": "2.*",
+    "slim/extras": "2.*"
+  }
+}
