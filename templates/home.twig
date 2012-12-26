@@ -1,0 +1,51 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="hero-unit">
+  <h1>EasyRdf</h1>
+  <p>EasyRdf is a PHP library designed to make it easy to consume and produce RDF. 
+     It was designed for use in mixed teams of experienced and inexperienced RDF 
+     developers. It is written in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a>
+     compliant PHP and has been tested extensively using PHPUnit.</p>
+  <p><a class="btn btn-primary btn-large" href="/docs/getting-started">Getting Started &raquo;</a></p>
+</div>
+
+
+<div id="example">
+{% markdown %}
+Example
+-------
+
+    $foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
+    $foaf->load();
+    $me = $foaf->primaryTopic();
+    echo "My name is: ".$me->get('foaf:name')."\n";
+{% endmarkdown %}
+</div>
+
+<div id="features">
+{% markdown %}
+Features
+--------
+
+* API documentation written in phpdoc
+* Extensive unit tests written using phpunit
+  * Automated testing against PHP 5.2, 5.3 and 5.4
+* Built-in parsers and serialisers: RDF/JSON, N-Triples, RDF/XML, Turtle
+* Optional parsing support for: [ARC2], [Redland Bindings], [rapper]
+* Optional support for [Zend_Http_Client]
+* No required external dependancies upon other libraries (PEAR, Zend, etc...)
+* Complies with Zend Framework coding style.
+* Type mapper - resources of type foaf:Person can be mapped into PHP object of class Foaf_Person
+* Support for visualisation of graphs using [GraphViz]
+* Comes with a number of examples
+
+[ARC2]:http://github.com/semsol/arc2/
+[GraphViz]:http://www.graphviz.org/
+[rapper]:http://librdf.org/raptor/rapper.html
+[Redland Bindings]:http://librdf.org/bindings/
+[Zend_Http_Client]:http://framework.zend.com/manual/en/zend.http.client.html
+
+{% endmarkdown %}
+</div>
+{% endblock %}
