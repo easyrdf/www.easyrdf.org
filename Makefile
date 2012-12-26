@@ -2,7 +2,10 @@
 all: build
 
 build:
-	curl -s -z composer.phar -o composer.phar http://getcomposer.org/composer.phar
 	php composer.phar --no-ansi --verbose --no-interaction install
 
-.PHONY: all build
+update:
+	curl -s -z composer.phar -o composer.phar http://getcomposer.org/composer.phar
+	php composer.phar --no-ansi --verbose --no-interaction update
+
+.PHONY: all build update
