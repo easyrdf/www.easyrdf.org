@@ -5,3 +5,6 @@ composer.phar
 !/logs/.gitkeep
 /templates/cache/*
 !/templates/cache/.gitkeep
+
+# Simple web server command script on Mac
+RunSimpleWebServer.command
