@@ -4,7 +4,9 @@
 }
 
 .hero-unit {
-  background: black;
+  background: #474b51;
+  padding: 1em;
+  border-radius: 20px;
 }
 
 .hero-unit h1 {
