@@ -34,12 +34,12 @@
 
     <div id="example" class="span6">
     <h2>Example</h2>
-    <pre class="prettyprint">
-    $foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
-    $foaf->load();
-    $me = $foaf->primaryTopic();
-    echo "My name is: ".$me->get('foaf:name')."\n";
-    </pre>
+<pre class="prettyprint">
+$foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
+$foaf->load();
+$me = $foaf->primaryTopic();
+echo "My name is: ".$me->get('foaf:name')."\n";
+</pre>
     </div>
 
     <div id="features" class="span6">
