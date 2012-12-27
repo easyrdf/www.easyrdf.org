@@ -27,7 +27,7 @@ body {
 .hero-unit h1 {
   text-indent: -10000px;
   direction: ltr;
-  background: url(/img/logo.jpg);
+  background: url(../img/logo.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
