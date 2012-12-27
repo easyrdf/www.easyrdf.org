@@ -45,3 +45,11 @@ In order to develop the EasyRdf website on your own machine, follow these steps:
 
    http://localhost/~username/www.easyrdf.org/public/
 
+Alternatively
+----------------------
+
+1. http://php-osx.liip.ch/
+2. Symlink thingie
+3. cd to the public dir
+4. php -S localhost:8000
+
