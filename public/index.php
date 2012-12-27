@@ -29,7 +29,7 @@ $app->view()->setData(
 
 // Define routes
 $app->get('/', function () use ($app) {
-    $app->render('home.twig');
+    $app->render('home.html');
 });
 
 $app->notFound(function () use ($app) {
