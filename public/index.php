@@ -32,5 +32,9 @@ $app->get('/', function () use ($app) {
     $app->render('home.twig');
 });
 
+$app->notFound(function () use ($app) {
+    $app->render('404.html');
+});
+
 // Run app
 $app->run();
