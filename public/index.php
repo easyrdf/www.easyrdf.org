@@ -21,6 +21,12 @@ $app->view(new \Slim\Extras\Views\Twig());
 $twig = $app->view()->getEnvironment();
 $twig->addTokenParser(new \Aptoma\Twig\TokenParser\MarkdownTokenParser());
 
+// Pass the root URL to the view
+$app->view()->setData(
+  'rootUrl',
+  $app->request()->getUrl() . $app->request()->getScriptName()
+);
+
 // Define routes
 $app->get('/', function () use ($app) {
     $app->render('home.twig');

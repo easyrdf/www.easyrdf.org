@@ -12,15 +12,13 @@
 
 
 <div id="example">
-{% markdown %}
-Example
--------
-
-    $foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
-    $foaf->load();
-    $me = $foaf->primaryTopic();
-    echo "My name is: ".$me->get('foaf:name')."\n";
-{% endmarkdown %}
+<h2>Example</h2>
+<pre class="prettyprint">
+$foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
+$foaf->load();
+$me = $foaf->primaryTopic();
+echo "My name is: ".$me->get('foaf:name')."\n";
+</pre>
 </div>
 
 <div id="features">
