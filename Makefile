@@ -2,7 +2,10 @@ COMPOSER_FLAGS=--no-ansi --verbose --no-interaction
 
 all: build
 
-build: composer.phar
+build: composer-install
+	php scripts/compile-less.php
+
+composer-install: composer.phar
 	php composer.phar $(COMPOSER_FLAGS) install
 
 update: clean composer.phar

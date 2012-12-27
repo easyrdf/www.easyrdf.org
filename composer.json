@@ -6,6 +6,8 @@
     "slim/slim": "2.*",
     "slim/extras": "2.*",
     "twig/twig": "1.*",
-    "aptoma/twig-markdown": "0.1.*"
+    "aptoma/twig-markdown": "0.1.*",
+    "twitter/bootstrap": "*",
+    "leafo/lessphp": "*"
   }
 }
