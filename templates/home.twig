@@ -29,40 +29,45 @@
 
 </div>
 
+<div class="container-fluid">
+  <div class="row-fluid">
 
-<div id="example">
-<h2>Example</h2>
-<pre class="prettyprint">
-$foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
-$foaf->load();
-$me = $foaf->primaryTopic();
-echo "My name is: ".$me->get('foaf:name')."\n";
-</pre>
-</div>
+    <div id="example" class="span6">
+    <h2>Example</h2>
+    <pre class="prettyprint">
+    $foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
+    $foaf->load();
+    $me = $foaf->primaryTopic();
+    echo "My name is: ".$me->get('foaf:name')."\n";
+    </pre>
+    </div>
 
-<div id="features">
-{% markdown %}
-Features
---------
+    <div id="features" class="span6">
+    {% markdown %}
+    Features
+    --------
 
-* API documentation written in phpdoc
-* Extensive unit tests written using phpunit
-  * Automated testing against PHP 5.2, 5.3 and 5.4
-* Built-in parsers and serialisers: RDF/JSON, N-Triples, RDF/XML, Turtle
-* Optional parsing support for: [ARC2], [Redland Bindings], [rapper]
-* Optional support for [Zend_Http_Client]
-* No required external dependancies upon other libraries (PEAR, Zend, etc...)
-* Complies with Zend Framework coding style.
-* Type mapper - resources of type foaf:Person can be mapped into PHP object of class Foaf_Person
-* Support for visualisation of graphs using [GraphViz]
-* Comes with a number of examples
+    * API documentation written in phpdoc
+    * Extensive unit tests written using phpunit
+      * Automated testing against PHP 5.2, 5.3 and 5.4
+    * Built-in parsers and serialisers: RDF/JSON, N-Triples, RDF/XML, Turtle
+    * Optional parsing support for: [ARC2], [Redland Bindings], [rapper]
+    * Optional support for [Zend_Http_Client]
+    * No required external dependancies upon other libraries (PEAR, Zend, etc...)
+    * Complies with Zend Framework coding style.
+    * Type mapper - resources of type foaf:Person can be mapped into PHP object of class Foaf_Person
+    * Support for visualisation of graphs using [GraphViz]
+    * Comes with a number of examples
 
-[ARC2]:http://github.com/semsol/arc2/
-[GraphViz]:http://www.graphviz.org/
-[rapper]:http://librdf.org/raptor/rapper.html
-[Redland Bindings]:http://librdf.org/bindings/
-[Zend_Http_Client]:http://framework.zend.com/manual/en/zend.http.client.html
+    [ARC2]:http://github.com/semsol/arc2/
+    [GraphViz]:http://www.graphviz.org/
+    [rapper]:http://librdf.org/raptor/rapper.html
+    [Redland Bindings]:http://librdf.org/bindings/
+    [Zend_Http_Client]:http://framework.zend.com/manual/en/zend.http.client.html
 
-{% endmarkdown %}
+    {% endmarkdown %}
+    </div>
+
+  </div>
 </div>
 {% endblock %}
