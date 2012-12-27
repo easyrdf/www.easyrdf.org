@@ -1,5 +1,10 @@
 body {
-  padding-top: 60px;
+  padding-top: 0px;
+}
+
+.navbar {
+  position: static;
+  margin-bottom: 20px;
 }
 
 .footer {
@@ -13,4 +18,39 @@ body {
 .footer p {
   margin-bottom: 0;
   color: #777;
+}
+
+.hero-unit {
+  background: black;
+}
+
+.hero-unit h1 {
+  text-indent: -10000px;
+  direction: ltr;
+  background: url(../img/logo.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height:165px;
+  display: block;
+}
+
+.hero-unit h2 {
+  color: white;
+  font-size: 18pt;
+  margin-top: 30px;
+}
+
+.hero-unit h2 strong {
+  color: #ff6000; /* orange */
+  font-weight: normal;
+}
+
+.hero-unit p {
+  color: #AAA;
+  padding-top: 20px;
+}
+
+.buttonPara {
+  text-align: center;
 }
