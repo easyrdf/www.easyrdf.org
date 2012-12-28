@@ -4,6 +4,7 @@ all: build
 
 build: composer-install
 	php scripts/compile-less.php
+	php scripts/build-example-data.php
 	php scripts/build-api-docs.php
 
 composer-install: composer.phar

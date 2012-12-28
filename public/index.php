@@ -2,6 +2,12 @@
 
 require '../vendor/autoload.php';
 
+EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
+
+// FIXME: make this nicer
+$composer = json_decode(file_get_contents('../vendor/njh/easyrdf/composer.json'), true);
+$version = $composer['version'];
+
 // Prepare app
 $app = new \Slim\Slim(array(
     'templates.path' => '../templates'
@@ -41,7 +47,15 @@ $app->get('/converter', function () use ($app) {
 });
 
 $app->get('/examples', function () use ($app) {
-    $app->response()->redirect('http://github.com/njh/easyrdf/tree/master/examples', 302);
+    $examples = new EasyRdf_Graph();
+    $examples->parseFile('../data/examples.ttl', 'turtle');
+    $app->view()->setData('examples', $examples->allOfType('easyrdf:Example'));
+    $app->render('examples.html');
+});
+
+$app->get('/examples/:filename', function ($filename) use ($app) {
+    global $version;
+    $app->response()->redirect("https://github.com/njh/easyrdf/blob/$version/examples/$filename", 302);
 });
 
 $app->get('/downloads', function () use ($app) {

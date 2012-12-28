@@ -53,6 +53,11 @@
   text-align: center;
 }
 
+.btn .filename {
+  color: #CCC;
+  font-size: 75%;
+}
+
 .footer {
   text-align: center;
   padding: 30px 0;

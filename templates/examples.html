@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Examples
+{% endblock %}
+
+{% block content %}
+<h1>Examples</h1>
+<ul>
+{% for example in examples %}
+  <li>
+    <h3>{{ example.get('rdfs:comment') }}</h3>
+    <div class="row-fluid">
+      <div class="span9">
+        {{ example.get('dc:description')|raw }}
+      </div>
+      <div class="span3">
+        <a class="btn btn-info btn-block" href="./examples/{{example.localName}}">
+          View &raquo;<br />
+          <span class="filename"><i class="icon-file icon-white"></i> {{example.localName}}</span>
+        </a>
+      </div>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}
