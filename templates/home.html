@@ -20,7 +20,7 @@ RDF Library for PHP
 
     <div class="row-fluid">
       <div class="span12">
-        <p>Designed for use in mixed teams of experienced and inexperienced RDF 
+        <p>Designed for use in mixed teams of experienced and inexperienced RDF
            developers. Written in <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">
            PSR-0</a> compliant PHP and tested extensively using <a href="http://www.phpunit.de/">PHPUnit</a>.
         </p>
@@ -31,22 +31,28 @@ RDF Library for PHP
     </div>
 
   </div>
-
-  
-
 </div>
 
 <div class="container-fluid">
   <div class="row-fluid">
 
-    <div id="example" class="span6">
-    <h2>Example</h2>
+    <div class="span6">
+      <div id="example">
+        <h2>Example</h2>
 <pre class="prettyprint">
 $foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
 $foaf->load();
 $me = $foaf->primaryTopic();
 echo "My name is: ".$me->get('foaf:name')."\n";
 </pre>
+      </div>
+
+      <div id="requirements">
+        <h2>Requirements</h2>
+        <ul>
+          <li>PHP 5.2.8 or newer</li>
+        </ul>
+      </div>
     </div>
 
     <div id="features" class="span6">
