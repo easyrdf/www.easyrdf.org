@@ -44,7 +44,7 @@ $app->get('/examples', function () use ($app) {
     $app->response()->redirect('http://github.com/njh/easyrdf/tree/master/examples', 302);
 });
 
-$app->get('/download', function () use ($app) {
+$app->get('/downloads', function () use ($app) {
     $app->response()->redirect('http://github.com/njh/easyrdf/downloads', 302);
 });
 
