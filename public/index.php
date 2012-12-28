@@ -32,6 +32,22 @@ $app->get('/', function () use ($app) {
     $app->render('home.html');
 });
 
+$app->get('/docs', function () use ($app) {
+    $app->response()->redirect('/docs/api', 302);
+});
+
+$app->get('/converter', function () use ($app) {
+    $app->response()->redirect('http://converter.easyrdf.org/', 302);
+});
+
+$app->get('/examples', function () use ($app) {
+    $app->response()->redirect('http://github.com/njh/easyrdf/tree/master/examples', 302);
+});
+
+$app->get('/download', function () use ($app) {
+    $app->response()->redirect('http://github.com/njh/easyrdf/downloads', 302);
+});
+
 $app->notFound(function () use ($app) {
     $app->render('404.html');
 });
