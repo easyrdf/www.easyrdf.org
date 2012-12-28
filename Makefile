@@ -18,6 +18,6 @@ clean:
 	rm -f composer.phar
 	rm -Rf vendor/
 	rm -f logs/*
-	rm -Rf templates/cache/*
+	rm -Rf tmp/*
 
 .PHONY: all build update clean

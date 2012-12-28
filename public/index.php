@@ -10,7 +10,7 @@ $app = new \Slim\Slim(array(
 // Prepare view renderer
 \Slim\Extras\Views\Twig::$twigOptions = array(
     'charset' => 'utf-8',
-    'cache' => realpath('../templates/cache'),
+    'cache' => realpath('../tmp/twig'),
     'auto_reload' => true,
     'strict_variables' => false,
     'autoescape' => true

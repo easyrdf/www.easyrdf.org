@@ -3,8 +3,8 @@ composer.phar
 /coverage/
 /logs/*
 !/logs/.gitkeep
-/templates/cache/*
-!/templates/cache/.gitkeep
+/tmp/*
+!/tmp/.gitkeep
 
 # Generated files
 public/css/bootstrap.css
