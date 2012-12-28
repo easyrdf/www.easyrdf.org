@@ -51,22 +51,26 @@ echo "My name is: ".$me->get('foaf:name')."\n";
     Features
     --------
 
-    * API documentation written in phpdoc
-    * Extensive unit tests written using phpunit
+    * Extensive unit tests written using [phpunit]
       * Automated testing against PHP 5.2, 5.3 and 5.4
     * Built-in parsers and serialisers: RDF/JSON, N-Triples, RDF/XML, Turtle
     * Optional parsing support for: [ARC2], [Redland Bindings], [rapper]
     * Optional support for [Zend_Http_Client]
     * No required external dependancies upon other libraries (PEAR, Zend, etc...)
-    * Complies with Zend Framework coding style.
-    * Type mapper - resources of type foaf:Person can be mapped into PHP object of class Foaf_Person
+    * Complies with Zend Framework coding style
+    * [Type mapper] - resources of type foaf:Person can be mapped into PHP object of class Foaf_Person
     * Support for visualisation of graphs using [GraphViz]
-    * Comes with a number of examples
+    * [Composer] compatible
+    * Comes with a number of [examples]
 
+    [Composer]:http://getcomposer.org/
+    [examples]:/examples
+    [phpunit]:http://phpunit.de/
     [ARC2]:http://github.com/semsol/arc2/
     [GraphViz]:http://www.graphviz.org/
     [rapper]:http://librdf.org/raptor/rapper.html
     [Redland Bindings]:http://librdf.org/bindings/
+    [Type mapper]:/docs/api/EasyRdf_TypeMapper.html
     [Zend_Http_Client]:http://framework.zend.com/manual/en/zend.http.client.html
 
     {% endmarkdown %}
