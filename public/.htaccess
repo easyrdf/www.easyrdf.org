@@ -6,5 +6,12 @@ RewriteEngine On
 #
 # RewriteBase /
 
+# Don't redirect to trailing slash if a directory exists
+DirectorySlash Off
+
+# Rewrite rules for API documentation
+RewriteRule ^docs/EasyRdf/(.+)$ docs/api/$1 [R=301,L]
+RewriteRule ^docs/api/?$ docs/api.html [L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]

@@ -9,3 +9,4 @@ composer.phar
 # Generated files
 public/css/bootstrap.css
 public/css/bootstrap-responsive.css
+public/docs/api/*
