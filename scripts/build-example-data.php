@@ -16,7 +16,9 @@ if (!$dh) {
 
 $examples = new EasyRdf_Graph();
 while (($filename = readdir($dh)) !== false) {
-    if (substr($filename, 0, 1) == '.' or $filename == 'index.php') {
+    if (substr($filename, 0, 1) == '.' or
+        $filename == 'index.php' or
+        $filename == 'html_tag_helpers.php') {
         continue;
     }
 
@@ -24,7 +26,7 @@ while (($filename = readdir($dh)) !== false) {
         $dir . DIRECTORY_SEPARATOR . $filename,
         FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
     );
-    
+
     $example = $examples->resource("http://www.easyrdf.org/examples/$filename", 'easyrdf:Example');
 
     $startDoc = false;
@@ -50,7 +52,7 @@ while (($filename = readdir($dh)) !== false) {
             $para .= $m[1];
         }
     }
-    
+
     $example->set('rdfs:comment', array_shift($text));
     if (!empty($text)) {
         // FIXME: use EasyRdf_Literal_HTML
