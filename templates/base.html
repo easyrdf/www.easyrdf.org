@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="utf-8"/>
-      <title>EasyRdf - {% block title %}{% endblock %}</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="">
+    <meta charset="utf-8"/>
+    <title>EasyRdf - {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Stylesheets -->
-      <link href="{{rootUrl}}/css/bootstrap.css" type="text/css" rel="stylesheet" media="screen">
-      <link href="{{rootUrl}}/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
-      <link href="{{rootUrl}}/css/prettify.css" type="text/css" rel="stylesheet">
-      <link href="{{rootUrl}}/css/easyrdf.css" type="text/css" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link href="{{rootUrl}}/css/bootstrap.css" type="text/css" rel="stylesheet" media="screen">
+    <link href="{{rootUrl}}/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
+    <link href="{{rootUrl}}/css/prettify.css" type="text/css" rel="stylesheet">
+    <link href="{{rootUrl}}/css/easyrdf.css" type="text/css" rel="stylesheet">
 
-      <!-- Fav and touch icons -->
-      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{rootUrl}}/icons/apple-touch-icon-144-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{rootUrl}}/icons/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{rootUrl}}/icons/apple-touch-icon-72-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" href="{{rootUrl}}/icons/apple-touch-icon-57-precomposed.png">
-      <link rel="shortcut icon" href="{{rootUrl}}/favicon.ico">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{rootUrl}}/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{rootUrl}}/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{rootUrl}}/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{rootUrl}}/icons/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="{{rootUrl}}/favicon.ico">
+
+    {% block head %}{% endblock %}
   </head>
 
   <body onload="prettyPrint()">
