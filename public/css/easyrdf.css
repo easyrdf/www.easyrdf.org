@@ -16,6 +16,16 @@
   padding: 0;
 }
 
+.forkme {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.forkme img {
+  border: 0;
+}
+
 .hero-unit {
   background: #474b51;
   padding: 1em;
