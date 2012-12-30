@@ -45,11 +45,12 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/docs', function () use ($app) {
-    $app->response()->redirect('/docs/api', 302);
+    $root = $app->view()->getData('rootUrl');
+    $app->redirect("$root/docs/api", 302);
 });
 
 $app->get('/converter', function () use ($app) {
-    $app->response()->redirect('http://converter.easyrdf.org/', 302);
+    $app->redirect('http://converter.easyrdf.org/', 302);
 });
 
 $app->get('/examples', function () use ($app) {
@@ -61,7 +62,7 @@ $app->get('/examples', function () use ($app) {
 
 $app->get('/examples/:filename', function ($filename) use ($app) {
     $version = $app->view()->getData('version');
-    $app->response()->redirect(
+    $app->redirect(
         "https://github.com/njh/easyrdf/blob/$version/examples/$filename",
         302
     );
