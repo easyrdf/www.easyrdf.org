@@ -1,8 +1,6 @@
 composer.phar
 /vendor/
 /coverage/
-/logs/*
-!/logs/.gitkeep
 /tmp/*
 !/tmp/.gitkeep
 /public/downloads/*
