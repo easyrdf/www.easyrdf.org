@@ -4,9 +4,11 @@ require '../vendor/autoload.php';
 
 EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
 
-// FIXME: make this nicer
-$composer = json_decode(file_get_contents('../vendor/njh/easyrdf/composer.json'), true);
-$version = $composer['version'];
+// Load information about the bundled version of EasyRdf
+$composer = json_decode(
+    file_get_contents('../vendor/njh/easyrdf/composer.json'),
+    true
+);
 
 // Prepare app
 $app = new \Slim\Slim(array(
@@ -28,10 +30,14 @@ $twig = $app->view()->getEnvironment();
 $twig->addTokenParser(new \Aptoma\Twig\TokenParser\MarkdownTokenParser());
 
 // Pass the root URL to the view
-$app->view()->setData(
-  'rootUrl',
-  $app->request()->getUrl() . $app->request()->getScriptName()
-);
+$app->view()->setData(array(
+  'version' => $composer['version'],
+  'rootUrl' => $app->request()->getUrl() . $app->request()->getScriptName(),
+));
+
+\Slim\Route::setDefaultConditions(array(
+    'filename' => '^[\w\.\-]+$'
+));
 
 // Define routes
 $app->get('/', function () use ($app) {
@@ -54,12 +60,33 @@ $app->get('/examples', function () use ($app) {
 });
 
 $app->get('/examples/:filename', function ($filename) use ($app) {
-    global $version;
-    $app->response()->redirect("https://github.com/njh/easyrdf/blob/$version/examples/$filename", 302);
+    $version = $app->view()->getData('version');
+    $app->response()->redirect(
+        "https://github.com/njh/easyrdf/blob/$version/examples/$filename",
+        302
+    );
 });
 
 $app->get('/downloads', function () use ($app) {
-    $app->response()->redirect('http://github.com/njh/easyrdf/downloads', 302);
+    $version = $app->view()->getData('version');
+    $downloads = array();
+    if ($dh = opendir('downloads')) {
+        while (($filename = readdir($dh)) !== false) {
+            if (preg_match('/^(.+)\-([^\-]+)\.([a-z\.]+)$/', $filename, $m)) {
+                $version = $m[2];
+                $downloads[$version] = $filename;
+            }
+        }
+        closedir($dh);
+
+        // Sort by version number
+        krsort($downloads);
+    } else {
+        throw new Exception("Failed to open downloads directory");
+    }
+
+    $app->view()->setData('downloads', $downloads);
+    $app->render('downloads.html');
 });
 
 $app->notFound(function () use ($app) {

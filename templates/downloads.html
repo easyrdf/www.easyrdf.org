@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+Downloads
+{% endblock %}
+
+{% block content %}
+
+<h1>Downloads</h1>
+<p>
+  The latest stable version of EasyRdf is version <strong>{{ version }}</strong>.<br />
+  An archive containing, the source code, documentation and tests is available below:
+</p>
+
+<ul>
+{% for filename in downloads %}
+  <li><a href="{{ rootUrl ~ '/downloads/' ~ filename }}" title="{{ filename }}">{{ filename }}</a></li>
+{% endfor %}
+</ul>
+
+<h3>Development Version</h3>
+<p>
+  Alternatively the latest development version of EasyRdf can be checked out from
+  <a href="http://github.com/">GitHub</a>:
+
+  <div style="margin-left: 2em">
+      <a href="http://github.com/njh/easyrdf">http://github.com/njh/easyrdf</a>
+  </div>
+</p>
+
+<p>
+  The development version, the master branch in Git, contains the latest bug fixes,
+  features and enhancements. The aim is for the master branch to always remain functional,
+  with no broken code or tests but that is not guaranteed.
+</p>
+
+{% endblock %}
+

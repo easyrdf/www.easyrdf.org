@@ -5,6 +5,8 @@ composer.phar
 !/logs/.gitkeep
 /tmp/*
 !/tmp/.gitkeep
+/public/downloads/*
+!/public/downloads/.gitkeep
 
 # Generated files
 data/examples.ttl
