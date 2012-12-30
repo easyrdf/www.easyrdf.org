@@ -1,6 +1,9 @@
 <?php
 
 require '../vendor/autoload.php';
+foreach( glob(__DIR__ . '/../lib/*.php') as $file ) {
+    require $file;
+}
 
 EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
 
@@ -39,6 +42,7 @@ $app->view()->setData(array(
     'filename' => '^[\w\.\-]+$'
 ));
 
+
 // Define routes
 $app->get('/', function () use ($app) {
     $app->render('home.html');
@@ -51,6 +55,11 @@ $app->get('/docs', function () use ($app) {
 
 $app->get('/converter', function () use ($app) {
     $app->redirect('http://converter.easyrdf.org/', 302);
+});
+
+$app->get('/downloads', function () use ($app) {
+    $controller = new DownloadsController($app);
+    $controller->indexAction();
 });
 
 $app->get('/examples', function () use ($app) {
@@ -66,28 +75,6 @@ $app->get('/examples/:filename', function ($filename) use ($app) {
         "https://github.com/njh/easyrdf/blob/$version/examples/$filename",
         302
     );
-});
-
-$app->get('/downloads', function () use ($app) {
-    $version = $app->view()->getData('version');
-    $downloads = array();
-    if ($dh = opendir('downloads')) {
-        while (($filename = readdir($dh)) !== false) {
-            if (preg_match('/^(.+)\-([^\-]+)\.([a-z\.]+)$/', $filename, $m)) {
-                $version = $m[2];
-                $downloads[$version] = $filename;
-            }
-        }
-        closedir($dh);
-
-        // Sort by version number
-        krsort($downloads);
-    } else {
-        throw new Exception("Failed to open downloads directory");
-    }
-
-    $app->view()->setData('downloads', $downloads);
-    $app->render('downloads.html');
 });
 
 $app->notFound(function () use ($app) {
