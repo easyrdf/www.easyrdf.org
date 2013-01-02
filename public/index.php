@@ -77,6 +77,10 @@ $app->get('/examples/:filename', function ($filename) use ($app) {
     );
 });
 
+$app->get('/support', function () use ($app) {
+    $app->render('support.html');
+});
+
 $app->notFound(function () use ($app) {
     $app->render('404.html');
 });
