@@ -8,7 +8,7 @@ require "$root/vendor/autoload.php";
 
 EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
 
-$dir = "$root/vendor/njh/easyrdf/examples/";
+$dir = "$root/vendor/easyrdf/easyrdf/examples/";
 $dh = opendir($dir);
 if (!$dh) {
     die("Failed to open directory: $dir\n");

@@ -3,7 +3,7 @@
   "homepage": "http://www.easyrdf.org/",
   "require": {
     "php": ">=5.3.0",
-    "njh/easyrdf": "0.7.1",
+    "easyrdf/easyrdf": "0.7.2",
     "slim/slim": "2.*",
     "slim/extras": "2.*",
     "twig/twig": "1.*",

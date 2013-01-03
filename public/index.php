@@ -9,7 +9,7 @@ EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
 
 // Load information about the bundled version of EasyRdf
 $composer = json_decode(
-    file_get_contents('../vendor/njh/easyrdf/composer.json'),
+    file_get_contents('../vendor/easyrdf/easyrdf/composer.json'),
     true
 );
 

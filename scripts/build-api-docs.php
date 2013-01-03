@@ -42,7 +42,7 @@ function messageCallback($message, $data)
 $iterator = Symfony\Component\Finder\Finder::create()
     ->files()
     ->name('*.php')
-    ->in("$root/vendor/njh/easyrdf/lib")
+    ->in("$root/vendor/easyrdf/easyrdf/lib")
 ;
 
 $sami = new Sami($iterator, array(
