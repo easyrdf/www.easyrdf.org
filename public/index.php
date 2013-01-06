@@ -39,7 +39,7 @@ $app->view()->setData(array(
 ));
 
 \Slim\Route::setDefaultConditions(array(
-    'filename' => '^[\w\.\-]+$'
+    'filename' => '[\w\.\-]+'
 ));
 
 
