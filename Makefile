@@ -5,6 +5,7 @@ all: build
 build: composer-install apidocs
 	php scripts/compile-less.php
 	php scripts/build-example-data.php
+	php scripts/build-packages-data.php
 
 apidocs: composer-install
 	./vendor/bin/sami.php update vendor/easyrdf/easyrdf/config/sami.php -n

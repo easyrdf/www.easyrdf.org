@@ -77,11 +77,6 @@ $app->get('/examples/:filename', function ($filename) use ($app) {
     );
 });
 
-$app->get('/packages.json', function () use ($app) {
-    $controller = new DownloadsController($app);
-    $controller->packagesAction();
-});
-
 $app->get('/support', function () use ($app) {
     $app->render('support.html');
 });

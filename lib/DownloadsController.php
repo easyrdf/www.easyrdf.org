@@ -16,15 +16,6 @@ class DownloadsController extends BaseController
         $this->app->render('downloads.html');
     }
 
-    public function packagesAction()
-    {
-        $this->response['Content-Type'] = 'application/json';
-        $this->response->body(
-            json_encode(array('packages' => $this->buildPackageData()))
-        );
-    }
-
-
     protected function buildPackageData()
     {
         $packages = array();
