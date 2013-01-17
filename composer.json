@@ -11,5 +11,11 @@
     "twitter/bootstrap": "*",
     "leafo/lessphp": "*",
     "sami/sami": "dev-master"
-  }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/njh/easyrdf"
+    }
+  ]
 }
