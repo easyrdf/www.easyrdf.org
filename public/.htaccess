@@ -13,5 +13,8 @@ DirectorySlash Off
 RewriteRule ^docs/EasyRdf/(.+)$ docs/api/$1 [R=301,L]
 RewriteRule ^docs/api/?$ docs/api.html [L]
 
+AddType application/rdf+xml .rdf
+AddType text/turtle .ttl
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
