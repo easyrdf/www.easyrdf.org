@@ -3,14 +3,10 @@ COMPOSER_FLAGS=--no-ansi --verbose --no-interaction
 all: build
 
 build: composer-install \
-       apidocs \
+       public/docs/api \
        public/css/bootstrap.css \
        public/packages.json \
        data/examples.ttl
-
-apidocs: composer-install
-	./vendor/bin/sami.php update vendor/easyrdf/easyrdf/config/sami.php -n
-	cp -Rf vendor/easyrdf/easyrdf/docs/api public/docs/
 
 composer-install: composer.phar
 	php composer.phar $(COMPOSER_FLAGS) install
@@ -21,6 +17,10 @@ update: clean composer.phar
 composer.phar:
 	curl -s -z composer.phar -o composer.phar http://getcomposer.org/composer.phar
 
+
+public/docs/api: composer-install
+	./vendor/bin/sami.php update vendor/easyrdf/easyrdf/config/sami.php -n
+	cp -Rf vendor/easyrdf/easyrdf/docs/api public/docs/
 
 public/css/bootstrap.css:
 	php scripts/compile-less.php
