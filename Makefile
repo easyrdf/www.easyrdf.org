@@ -7,6 +7,7 @@ build: composer-install \
        public/css/bootstrap.css \
        public/packages.json \
        data/examples.ttl \
+       public/doap.rdf \
        public/js/bootstrap-collapse.js
 
 composer-install: composer.phar
@@ -26,6 +27,9 @@ public/docs/api: composer-install
 public/css/bootstrap.css:
 	php scripts/compile-less.php
 
+public/doap.rdf:
+	php vendor/easyrdf/easyrdf/doap.php > $@
+
 public/packages.json:
 	php scripts/build-packages-data.php
 
@@ -40,6 +44,7 @@ clean:
 	rm -Rf vendor/
 	rm -Rf public/docs/api
 	rm -f public/css/bootstrap.css
+	rm -f public/daop.rdf
 	rm -f public/js/bootstrap-collapse.js
 	rm -f public/packages.json
 	rm -f data/examples.ttl
