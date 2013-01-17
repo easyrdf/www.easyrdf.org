@@ -11,3 +11,4 @@ data/examples.ttl
 public/css/bootstrap.css
 public/css/bootstrap-responsive.css
 public/docs/api/*
+public/packages.json
