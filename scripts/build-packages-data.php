@@ -61,5 +61,8 @@ ksort($packages);
 // Write out packages.json
 file_put_contents(
     "$root/public/packages.json",
-    json_encode(array('packages' => $packages))
+    json_encode(array(
+        'packages' => $packages,
+        'notify_batch' => 'https://packagist.org/downloads/'
+    ))
 );
