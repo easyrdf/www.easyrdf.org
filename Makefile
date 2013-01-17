@@ -6,7 +6,8 @@ build: composer-install \
        public/docs/api \
        public/css/bootstrap.css \
        public/packages.json \
-       data/examples.ttl
+       data/examples.ttl \
+       public/js/bootstrap-collapse.js
 
 composer-install: composer.phar
 	php composer.phar $(COMPOSER_FLAGS) install
@@ -31,12 +32,15 @@ public/packages.json:
 data/examples.ttl:
 	php scripts/build-example-data.php
 
+public/js/bootstrap-collapse.js: vendor/twitter/bootstrap/twitter/bootstrap/js/bootstrap-collapse.js
+	cp -fp $^ $@
 
 clean:
 	rm -f composer.phar
 	rm -Rf vendor/
 	rm -Rf public/docs/api
 	rm -f public/css/bootstrap.css
+	rm -f public/js/bootstrap-collapse.js
 	rm -f public/packages.json
 	rm -f data/examples.ttl
 	rm -f logs/*
