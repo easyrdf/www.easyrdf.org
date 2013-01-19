@@ -27,7 +27,10 @@ Downloads
   <tbody>
   {% for download in downloads %}
     <tr>
-      <td><a href="{{ download.url }}">{{ download.filename }}</a></td>
+      <td>
+        <a href="{{ download.url }}"><i class="icon-file"></i></a>
+        <a href="{{ download.url }}">{{ download.filename }}</a>
+      </td>
       <td>{{ download.size }}</td>
       <td>{{ download.releaseDate }}</td>
     </tr>
