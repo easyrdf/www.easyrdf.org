@@ -8,25 +8,42 @@ Downloads
 
 <h1>Downloads</h1>
 <p>
-  The latest stable version of EasyRdf is version <strong>{{ version }}</strong>.<br />
-  An archive containing, the source code, documentation and tests is available below:
+  The latest stable version of EasyRdf is version <strong>{{ version }}</strong>.
 </p>
 
-<ul>
-{% for filename in downloads %}
-  <li><a href="{{ rootUrl ~ '/downloads/' ~ filename }}" title="{{ filename }}">{{ filename }}</a></li>
-{% endfor %}
-</ul>
+
+<h3>Stable Downloads</h3>
+<p>
+  An archive containing, the source code, documentation and tests is available below:
+</p>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>File size</th>
+      <th>Release Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for download in downloads %}
+    <tr>
+      <td><a href="{{ download.url }}">{{ download.filename }}</a></td>
+      <td>{{ download.size }}</td>
+      <td>{{ download.releaseDate }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
 
 <h3>Development Version</h3>
 <p>
   Alternatively the latest development version of EasyRdf can be checked out from
   <a href="http://github.com/">GitHub</a>:
-
-  <div style="margin-left: 2em">
-      <a href="http://github.com/njh/easyrdf">http://github.com/njh/easyrdf</a>
-  </div>
 </p>
+
+<div style="margin-left: 2em">
+    <a href="http://github.com/njh/easyrdf">http://github.com/njh/easyrdf</a>
+</div>
 
 <p>
   The development version, the master branch in Git, contains the latest bug fixes,

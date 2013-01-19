@@ -4,51 +4,51 @@ class DownloadsController extends BaseController
 {
     public function indexAction()
     {
-        $version = $this->view->getData('version');
-        $downloads = array();
-        foreach ($this->buildPackageData() as $name => $versions) {
-            foreach ($versions as $version => $info) {
-                $downloads[] = basename($info['dist']['url']);
-            }
-        }
-
-        $this->view->setData('downloads', $downloads);
+        $this->view->setData(
+            'downloads',
+            $this->getDownloads()
+        );
         $this->app->render('downloads.html');
     }
 
-    protected function buildPackageData()
+    protected function getDownloads()
     {
-        $packages = array();
+        $downloads = array();
         if ($dh = opendir('downloads')) {
             while (($filename = readdir($dh)) !== false) {
                 if (preg_match('/^(.+?)\-([^\-]+?)\.([a-z\.]+)$/', $filename, $m)) {
                     list(,$name, $version, $type) = $m;
-                    if (substr($type, 0, 4) === 'tar.') {
-                        $type = 'tar';
-                    }
 
-                    $packages["easyrdf/$name"][$version] = array(
-                        'name' => "easyrdf/$name",
+                    // Get release date
+                    $mtime = filemtime("downloads/$filename");
+
+                    $downloads[] = array(
+                        'name' => $name,
+                        'filename' => $filename,
+                        'url' => "http://www.easyrdf.org/downloads/$filename",
                         'version' => $version,
-                        'dist' => array(
-                            'url' => "http://www.easyrdf.org/downloads/$filename",
-                            'type' => $type
-                        )
-                    );
+                        'type' => $type,
+                        'releaseDate' => gmdate('Y-m-d', $mtime),
+                        'size' => $this->humanFilesize("downloads/$filename", 1)
+                     );
                 }
             }
             closedir($dh);
         }
 
-        // Reverse-sort by version number
-        foreach($packages as $name => $package) {
-            krsort($packages[$name]);
-        }
+        // Sort by version number
+        usort($downloads, function ($a, $b) {
+            return version_compare($b['version'], $a['version']);
+        });
 
-        // Sort by package name
-        ksort($packages);
+        return $downloads;
+    }
 
-        return $packages;
+    protected function humanFilesize($filename, $decimals = 2) {
+        $sz = 'BKMGTP';
+        $bytes = filesize($filename);
+        $factor = floor((strlen($bytes) - 1) / 3);
+        return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$sz[$factor];
     }
 
 }
