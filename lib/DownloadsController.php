@@ -6,12 +6,12 @@ class DownloadsController extends BaseController
     {
         $this->view->setData(
             'downloads',
-            $this->getDownloads()
+            $this->getDownloads(8)
         );
         $this->app->render('downloads.html');
     }
 
-    protected function getDownloads()
+    protected function getDownloads($limit=NULL)
     {
         $downloads = array();
         if ($dh = opendir('downloads')) {
@@ -41,7 +41,7 @@ class DownloadsController extends BaseController
             return version_compare($b['version'], $a['version']);
         });
 
-        return $downloads;
+        return array_slice($downloads, 0, $limit);
     }
 
     protected function humanFilesize($filename, $decimals = 2) {
