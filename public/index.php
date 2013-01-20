@@ -28,10 +28,6 @@ $app = new \Slim\Slim(array(
 );
 $app->view(new \Slim\Extras\Views\Twig());
 
-// Add support for the markdown tag
-$twig = $app->view()->getEnvironment();
-$twig->addTokenParser(new \Aptoma\Twig\TokenParser\MarkdownTokenParser());
-
 // Pass the root URL to the view
 $app->view()->setData(array(
   'version' => $composer['version'],
