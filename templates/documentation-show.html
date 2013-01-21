@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Documentation - {{ title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="span3 sidenav">
+  <ul class="nav nav-tabs nav-stacked">
+    {% for item in items %}
+    <li><a href="{{ item.name }}"><i class="icon-chevron-right"></i> {{ item.title }}</a></li>
+    {% endfor %}
+    <li><a href="{{ rootUrl~"/docs/api" }}"><i class="icon-chevron-right"></i> API Reference</a></li>
+  </ul>
+</div>
+
+<div class="span8">
+{{ text|raw }}
+</div>
+
+{% endblock %}

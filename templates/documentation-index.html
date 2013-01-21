@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Documentation
+{% endblock %}
+
+{% block content %}
+
+<h1>Documentation</h1>
+
+<ul>
+  {% for item in items %}
+  <li><a href="{{ rootUrl~'/docs/'~item.name }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<h2>API Reference</h2>
+
+<p>
+  Visit the <a href="{{ rootUrl}}/docs/api">API reference index</a> or
+  click on one of the classes below:
+</p>
+
+<ul>
+{% for class in classes %}
+  <li><a href="{{ rootUrl~'/docs/api/'~class }}.html">{{ class }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

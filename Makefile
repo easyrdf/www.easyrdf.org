@@ -3,6 +3,7 @@ COMPOSER_FLAGS=--no-ansi --verbose --no-interaction
 all: build
 
 build: composer-install \
+       build-docs \
        public/docs/api \
        public/css/bootstrap.css \
        public/packages.json \
@@ -19,6 +20,8 @@ update: clean composer.phar
 composer.phar:
 	curl -s -z composer.phar -o composer.phar http://getcomposer.org/composer.phar
 
+build-docs: composer-install
+	php scripts/build-docs.php
 
 public/docs/api: composer-install
 	./vendor/bin/sami.php update vendor/easyrdf/easyrdf/config/sami.php -n

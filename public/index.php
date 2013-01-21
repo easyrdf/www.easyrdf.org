@@ -49,12 +49,17 @@ $app->get('/converter', function () use ($app) {
 });
 
 $app->get('/docs', function () use ($app) {
-    $root = $app->view()->getData('rootUrl');
-    $app->redirect("$root/docs/api", 302);
+    $controller = new DocumentationController($app);
+    $controller->indexAction();
 });
 
 $app->get('/docs/api', function () use ($app) {
     $app->render('api.html');
+});
+
+$app->get('/docs/:name', function ($name) use ($app) {
+    $controller = new DocumentationController($app);
+    $controller->showAction($name);
 });
 
 $app->get('/downloads', function () use ($app) {
