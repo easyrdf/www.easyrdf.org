@@ -62,7 +62,11 @@ class DocumentationController extends BaseController
         if ($dh = opendir('docs/api')) {
             while (($filename = readdir($dh)) !== false) {
                 if (preg_match('/^(EasyRdf_\w+)/', $filename, $m)) {
-                    $classes[] = $m[1];
+                    $classes[] = array(
+                        'name' => $m[1],
+                        'path' => "/docs/api/$filename",
+                        'depth' => substr_count($m[1], '_')
+                    );
                 }
             }
             closedir($dh);

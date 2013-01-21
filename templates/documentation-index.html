@@ -17,13 +17,20 @@ Documentation
 <h2>API Reference</h2>
 
 <p>
-  Visit the <a href="{{ rootUrl}}/docs/api">API reference index</a> or
+  Visit the <a href="{{ rootUrl }}/docs/api">API reference index</a> or
   click on one of the classes below:
 </p>
 
-<ul>
+{% set depth = 0 %}
 {% for class in classes %}
-  <li><a href="{{ rootUrl~'/docs/api/'~class }}.html">{{ class }}</a></li>
+  {% if class.depth > depth %}
+  <ul>
+  {% endif %}
+  {% if class.depth < depth %}
+  </ul>
+  {% endif %}
+  <li><a href="{{ rootUrl~class.path }}">{{ class.name }}</a></li>
+  {% set depth = class.depth %}
 {% endfor %}
 </ul>
 
