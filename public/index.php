@@ -44,13 +44,17 @@ $app->get('/', function () use ($app) {
     $app->render('home.html');
 });
 
+$app->get('/converter', function () use ($app) {
+    $app->redirect('http://converter.easyrdf.org/', 302);
+});
+
 $app->get('/docs', function () use ($app) {
     $root = $app->view()->getData('rootUrl');
     $app->redirect("$root/docs/api", 302);
 });
 
-$app->get('/converter', function () use ($app) {
-    $app->redirect('http://converter.easyrdf.org/', 302);
+$app->get('/docs/api', function () use ($app) {
+    $app->render('api.html');
 });
 
 $app->get('/downloads', function () use ($app) {
