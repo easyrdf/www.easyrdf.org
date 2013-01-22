@@ -24,14 +24,17 @@ Documentation
 {% set depth = 0 %}
 {% for class in classes %}
   {% if class.depth > depth %}
-  <ul>
+  <ul><li>
+  {% elseif class.depth < depth %}
+  </li></ul></li><li>
+  {% elseif depth > 0 %}
+  </li><li>
+  {% else %}
+  <li>
   {% endif %}
-  {% if class.depth < depth %}
-  </ul>
-  {% endif %}
-  <li><a href="{{ rootUrl~class.path }}">{{ class.name }}</a></li>
+    <a href="{{ rootUrl~class.path }}">{{ class.name }}</a>
   {% set depth = class.depth %}
 {% endfor %}
-</ul>
+</li></ul>
 
 {% endblock %}
