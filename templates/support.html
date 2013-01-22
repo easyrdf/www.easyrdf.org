@@ -5,11 +5,13 @@ Support
 {% endblock %}
 
 {% block content %}
-<h1>Support</h1>
+<div class="section">
+  <h1>Support</h1>
 
-<p>
-  If you have any general questions or need help using EasyRdf, then there are a couple
-  of forums for you to get help:
+  <p>
+    If you have any general questions or need help using EasyRdf, then there are a couple
+    of forums for you to get help:
+  </p>
 
   <dl>
     <dt>Mailing List</dt>
@@ -20,34 +22,38 @@ Support
     <dd><a href="irc://chat.freenode.net/easyrdf">#easyrdf</a>
     on <a href="http://freenode.net/">Freenode</a></dd>
   </dl>
-</p>
+</div>
 
 
+<div class="section">
+  <h2>Issue tracker</h2>
 
-<h2>Issue tracker</h2>
+  <p>
+    Please submit bug reports and enhancement requests to the issue tracker on 
+    <a href="http://github.com/">GitHub</a>:
+  </p>
 
-<p>
-  Please submit bug reports and enhancement requests to the issue tracker on 
-  <a href="http://github.com/">GitHub</a>:
+  <p style="margin-left: 2em">
+    <a href="http://github.com/njh/easyrdf/issues">http://github.com/njh/easyrdf/issues</a>
+  </p>
 
-  <div style="margin-left: 2em">
-      <a href="http://github.com/njh/easyrdf/issues">http://github.com/njh/easyrdf/issues</a>
-  </div>
-
-  I would be delighted if you could supply a pull request or patch with bug reports but 
-  any major enhancements or changes should be discussed with me first, as I cannot promise 
-  to accept all pull requests.
-</p>
+  <p>
+    I would be delighted if you could supply a pull request or patch with bug reports but 
+    any major enhancements or changes should be discussed with me first, as I cannot promise 
+    to accept all pull requests.
+  </p>
+</div>
 
 
+<div class="section">
+  <h2>Security Issues</h2>
 
-<h2>Security Issues</h2>
-
-<p>
-  If you think that you have found a security issue in EasyRdf, 
-  please don't use the mailing list or the issue tracker. Instead, all 
-  security issues must be sent to security [at] easyrdf.org.
-  Emails sent to this address are forwarded to the development team to look at.
-</p>
+  <p>
+    If you think that you have found a security issue in EasyRdf, 
+    please don't use the mailing list or the issue tracker. Instead, all 
+    security issues must be sent to security [at] easyrdf.org.
+    Emails sent to this address are forwarded to the development team to look at.
+  </p>
+</div>
 
 {% endblock %}

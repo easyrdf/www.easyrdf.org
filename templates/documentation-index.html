@@ -6,35 +6,40 @@ Documentation
 
 {% block content %}
 
-<h1>Documentation</h1>
+<div class="section">
+  <h1>Documentation</h1>
 
-<ul>
-  {% for item in items %}
-  <li><a href="{{ rootUrl~'/docs/'~item.name }}">{{ item.title }}</a></li>
+  <ul>
+    {% for item in items %}
+    <li><a href="{{ rootUrl~'/docs/'~item.name }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+<div class="section">
+  <h2>API Reference</h2>
+
+  <p>
+    Visit the <a href="{{ rootUrl }}/docs/api">API reference index</a> or
+    click on one of the classes below:
+  </p>
+
+  {% set depth = 0 %}
+  {% for class in classes %}
+    {% if class.depth > depth %}
+    <ul><li>
+    {% elseif class.depth < depth %}
+    </li></ul></li><li>
+    {% elseif depth > 0 %}
+    </li><li>
+    {% else %}
+    <li>
+    {% endif %}
+      <a href="{{ rootUrl~class.path }}">{{ class.name }}</a>
+    {% set depth = class.depth %}
   {% endfor %}
-</ul>
-
-<h2>API Reference</h2>
-
-<p>
-  Visit the <a href="{{ rootUrl }}/docs/api">API reference index</a> or
-  click on one of the classes below:
-</p>
-
-{% set depth = 0 %}
-{% for class in classes %}
-  {% if class.depth > depth %}
-  <ul><li>
-  {% elseif class.depth < depth %}
-  </li></ul></li><li>
-  {% elseif depth > 0 %}
-  </li><li>
-  {% else %}
-  <li>
-  {% endif %}
-    <a href="{{ rootUrl~class.path }}">{{ class.name }}</a>
-  {% set depth = class.depth %}
-{% endfor %}
-</li></ul>
+  </li></ul>
+</div>
 
 {% endblock %}
