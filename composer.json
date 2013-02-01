@@ -10,6 +10,7 @@
     "slim/slim": "2.*",
     "slim/extras": "2.*",
     "twig/twig": "1.*",
+    "njh/twig-html-helpers": "dev-master",
     "twitter/bootstrap": "*"
   },
   "repositories": [

@@ -1,5 +1,5 @@
 {
-    "hash": "18e56fc0de9080af36ac42b49db97dbd",
+    "hash": "7223289ea5053b684090c2b2d06f9eb8",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -60,12 +60,12 @@
             "version": "0.7.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/njh/easyrdf",
+                "url": "git://github.com/njh/easyrdf.git",
                 "reference": "0.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/njh/easyrdf/zipball/0.7.2",
+                "url": "https://github.com/njh/easyrdf/archive/0.7.2.zip",
                 "reference": "0.7.2",
                 "shasum": ""
             },
@@ -79,6 +79,7 @@
                     "EasyRdf_": "lib/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -97,12 +98,7 @@
                 "Semantic Web",
                 "Turtle",
                 "Linked Data"
-            ],
-            "support": {
-                "forum": "http://groups.google.com/group/easyrdf/",
-                "issues": "http://github.com/njh/easyrdf/issues",
-                "source": "https://github.com/njh/easyrdf/tree/0.7.2"
-            }
+            ]
         },
         {
             "name": "leafo/lessphp",
@@ -177,6 +173,54 @@
             "keywords": [
                 "php",
                 "parser"
+            ]
+        },
+        {
+            "name": "njh/twig-html-helpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/njh/twig-html-helpers.git",
+                "reference": "f5f1b0f9f17998b9d225c96d749baa1919f44210"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/njh/twig-html-helpers/zipball/f5f1b0f9f17998b9d225c96d749baa1919f44210",
+                "reference": "f5f1b0f9f17998b9d225c96d749baa1919f44210",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4",
+                "twig/twig": "1.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=3.5.15"
+            },
+            "time": "2013-02-01 10:47:32",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extension_HTMLHelpers": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicholas Humfrey",
+                    "email": "njh@aelius.com",
+                    "homepage": "http://www.aelius.com/njh/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rails style view helpers for HTML tags in PHP Twig",
+            "homepage": "https://github.com/njh/twig-html-helpers",
+            "keywords": [
+                "twig",
+                "html",
+                "tag"
             ]
         },
         {
@@ -664,6 +708,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sami/sami": 20
+        "sami/sami": 20,
+        "njh/twig-html-helpers": 20
     }
 }

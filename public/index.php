@@ -28,6 +28,10 @@ $app = new \Slim\Slim(array(
 );
 $app->view(new \Slim\Extras\Views\Twig());
 
+// Add extensions to Twig
+$twig = $app->view()->getEnvironment();
+$twig->addExtension(new Twig_Extension_HTMLHelpers());
+
 // Pass the root URL to the view
 $app->view()->setData(array(
   'version' => $composer['version'],
