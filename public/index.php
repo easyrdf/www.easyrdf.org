@@ -48,9 +48,10 @@ $app->get('/', function () use ($app) {
     $app->render('home.html');
 });
 
-$app->get('/converter', function () use ($app) {
-    $app->redirect('http://converter.easyrdf.org/', 302);
-});
+$app->map('/converter', function () use ($app) {
+    $controller = new ConverterController($app);
+    $controller->convertAction();
+})->via('GET', 'POST');
 
 $app->get('/docs', function () use ($app) {
     $controller = new DocumentationController($app);
