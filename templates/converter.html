@@ -8,6 +8,13 @@ Converter
 
 <h1>Converter</h1>
 
+{% if error %}
+<div class="alert alert-block span9">
+  <strong>Error!</strong>
+  {{ error }}
+</div>
+{% endif %}
+
 <div class="container">
   <div class="span9 well well-large">
     <form method="POST" accept-charset="utf-8" action="{{rootUrl}}/converter">
@@ -41,5 +48,15 @@ Converter
     </form>
   </div>
 </div>
+
+{% if output %}
+<div>
+  <h2>Output</h2>
+  <div class="alert alert-block alert-info">
+    Number of triples parsed: {{ count }}
+  </div>
+  <pre id="result" class="prettyprint"><code>{{ output }}</code></pre>
+</div>
+{% endif %}
 
 {% endblock %}
