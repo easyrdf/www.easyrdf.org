@@ -17,6 +17,10 @@ if (!$dh) {
     die("Failed to open directory: $inputDir\n");
 }
 
+if (!is_dir($outputDir)) {
+    mkdir($outputDir);
+}
+
 while (($filename = readdir($dh)) !== false) {
     if (preg_match('/^(\d+)-(.+?)\.(md)$/', $filename, $m)) {
         list(,$index,$name,$ext) = $m;
