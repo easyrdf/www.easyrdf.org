@@ -1,19 +1,10 @@
 #!/bin/sh
 #
-# Script to configure a Debian server to host www.easyrdf.org
+# Script to setup a Debian server to host www.easyrdf.org
 #
 
 # If anything fails, throw error
 set -e
-
-# Disable interactive configuration options
-echo "set debconf/frontend Noninteractive" | debconf-communicate
-echo "set debconf/priority critical" | debconf-communicate
-
-# Configure locale for this system
-echo "set locales/locales_to_be_generated en_GB.UTF-8 UTF-8" | debconf-communicate
-echo "set locales/default_environment_locale None" | debconf-communicate
-locale-gen
 
 # Upgrade to latest versions of packages
 apt-get update
@@ -45,11 +36,13 @@ fi
 
 # Build the app
 cd /srv/www/easyrdf
-mkdir -p /srv/www/easyrdf/tmp/twig
-chown www-data:www-data /srv/www/easyrdf/tmp/twig
+mkdir -pf /srv/www/easyrdf/tmp/twig
+chown -f www-data:www-data /srv/www/easyrdf/tmp/twig
+rm -Rf /srv/www/easyrdf/tmp/twig/*
 make
 
 # Configure and restart apache
-cp -v config/apache2.conf /etc/apache2/sites-available/default
+cp -v config/apache2.conf /etc/apache2/sites-available/easyrdf
 a2enmod rewrite
+a2ensite easyrdf
 service apache2 restart
