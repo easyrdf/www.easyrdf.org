@@ -39,7 +39,7 @@ public/packages.json:
 data/examples.ttl:
 	php scripts/build-example-data.php
 
-public/js/bootstrap-collapse.js: vendor/twitter/bootstrap/twitter/bootstrap/js/bootstrap-collapse.js
+public/js/bootstrap-collapse.js: vendor/twitter/bootstrap/js/bootstrap-collapse.js
 	cp -fp $^ $@
 
 clean:

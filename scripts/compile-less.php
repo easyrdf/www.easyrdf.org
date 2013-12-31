@@ -7,7 +7,7 @@ $root = realpath(__DIR__ . "/..");
 require "$root/vendor/autoload.php";
 
 // Location of bootstrap source LESS files
-$bootstrap = "$root/vendor/twitter/bootstrap/twitter/bootstrap/less";
+$bootstrap = "$root/vendor/twitter/bootstrap/less";
 
 $less = new lessc;
 $less->setImportDir(array(

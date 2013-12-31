@@ -675,34 +675,35 @@
         },
         {
             "name": "twitter/bootstrap",
-            "version": "v2.2.2",
-            "target-dir": "twitter/bootstrap",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
-                "url": "git://github.com/twitter/bootstrap.git",
-                "reference": "v2.2.2"
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "b4c4072679943773a7582daa63f545ba818fa627"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/twitter/bootstrap/archive/v2.2.2.zip",
-                "reference": "v2.2.2",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/b4c4072679943773a7582daa63f545ba818fa627",
+                "reference": "b4c4072679943773a7582daa63f545ba818fa627",
                 "shasum": ""
             },
-            "time": "2012-12-08 20:57:21",
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
             "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
-            "homepage": "http://twitter.github.com/bootstrap/",
+            "homepage": "http://twbs.github.com/bootstrap/",
             "keywords": [
-                "css",
-                "bootstrap"
-            ]
+                "bootstrap",
+                "css"
+            ],
+            "time": "2013-07-27 06:36:38"
         }
     ],
-    "packages-dev": null,
+    "packages-dev": [
+
+    ],
     "aliases": [
 
     ],
@@ -710,5 +711,11 @@
     "stability-flags": {
         "sami/sami": 20,
         "njh/twig-html-helpers": 20
-    }
+    },
+    "platform": {
+        "php": ">=5.3.0"
+    },
+    "platform-dev": [
+
+    ]
 }
