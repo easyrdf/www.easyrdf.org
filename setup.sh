@@ -36,7 +36,7 @@ fi
 
 # Build the app
 cd /srv/www/easyrdf
-mkdir -pf /srv/www/easyrdf/tmp/twig
+mkdir -p /srv/www/easyrdf/tmp/twig
 chown -f www-data:www-data /srv/www/easyrdf/tmp/twig
 rm -Rf /srv/www/easyrdf/tmp/twig/*
 make
