@@ -2,6 +2,17 @@
 
 define('ROOT_DIR', realpath(__DIR__ . '/../'));
 
+if (php_sapi_name() == 'cli-server') {
+    if (is_file(ROOT_DIR . '/public' . $_SERVER['REQUEST_URI'])) {
+        // Get the PHP web server to serve the file
+        return false;
+    } else {
+        // Hackery required to get Slim to behave
+        $_SERVER['PATH_INFO'] = $_SERVER['REQUEST_URI'];
+        $_SERVER['SCRIPT_NAME'] = '/';
+    }
+}
+
 require ROOT_DIR . '/vendor/autoload.php';
 foreach( glob(ROOT_DIR . '/lib/*.php') as $file ) {
     require $file;
