@@ -9,7 +9,7 @@ require "$root/vendor/autoload.php";
 $inputDir = "$root/vendor/easyrdf/easyrdf/docs";
 $outputDir = "$root/public/docs";
 
-$markdownParser = new dflydev\markdown\MarkdownParser();
+use \Michelf\Markdown;
 
 
 $dh = opendir($inputDir);
@@ -32,7 +32,7 @@ while (($filename = readdir($dh)) !== false) {
 
     echo "  $filename\n";
     $markdown = file_get_contents($inputPath);
-    $html = $markdownParser->transformMarkdown($markdown);
+    $html = Markdown::defaultTransform($markdown);
     
     // FIXME: better way to pretty print PHP code?
     $html = str_replace(
