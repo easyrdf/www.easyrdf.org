@@ -51,6 +51,6 @@ clean:
 	rm -f public/packages.json
 	rm -f data/examples.ttl
 	rm -f logs/*
-	rm -Rf tmp/*
+	rm -Rf tmp/twig/*
 
 .PHONY: all build update clean
