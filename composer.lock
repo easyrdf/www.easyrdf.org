@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "87a7716a97ebccbc9c01782dc0d1a204",
+    "hash": "0c83ea7765817b96883825e3bed9fd90",
     "packages": [
         {
             "name": "easyrdf/easyrdf",
@@ -20,7 +20,7 @@
                 "psr-0": {
                     "EasyRdf_": "lib/"
                 }
-                }
+            }
         },
         {
             "name": "leafo/lessphp",
@@ -196,7 +196,7 @@
                 {
                     "name": "Andrew Smith",
                     "email": "a.smith@silentworks.co.uk",
-                    "homepage": "http://thoughts.silentworks.co.uk/"
+                    "homepage": "http://www.silentworks.co.uk/"
                 },
                 {
                     "name": "Josh Lockhart",
@@ -258,16 +258,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.12.1",
+            "version": "v1.16.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "7c124c94a52a082e05a606a3dd3b25d2eea316ff"
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/7c124c94a52a082e05a606a3dd3b25d2eea316ff",
-                "reference": "7c124c94a52a082e05a606a3dd3b25d2eea316ff",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
                 "shasum": ""
             },
             "require": {
@@ -276,7 +276,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -286,16 +286,24 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com"
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -303,7 +311,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-01-15 20:03:52"
+            "time": "2014-12-25 19:58:19"
         },
         {
             "name": "twitter/bootstrap",

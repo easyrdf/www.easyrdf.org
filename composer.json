@@ -8,7 +8,7 @@
     "michelf/php-markdown": "1.4.1",
     "slim/slim": "2.2.0",
     "slim/extras": "2.0.3",
-    "twig/twig": "v1.12.1",
+    "twig/twig": "1.16.3",
     "njh/twig-html-helpers": "dev-master",
     "twitter/bootstrap": "v2.3.2"
   },
