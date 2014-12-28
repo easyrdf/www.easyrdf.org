@@ -1,7 +1,9 @@
 <?php
 
-require '../vendor/autoload.php';
-foreach( glob(__DIR__ . '/../lib/*.php') as $file ) {
+define('ROOT_DIR', realpath(__DIR__ . '/../'));
+
+require ROOT_DIR . '/vendor/autoload.php';
+foreach( glob(ROOT_DIR . '/lib/*.php') as $file ) {
     require $file;
 }
 
@@ -9,19 +11,19 @@ EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
 
 // Load information about the bundled version of EasyRdf
 $composer = json_decode(
-    file_get_contents('../vendor/easyrdf/easyrdf/composer.json'),
+    file_get_contents(ROOT_DIR . '/vendor/easyrdf/easyrdf/composer.json'),
     true
 );
 
 // Prepare app
 $app = new \Slim\Slim(array(
-    'templates.path' => '../templates'
+    'templates.path' => ROOT_DIR . '/templates'
 ));
 
 // Prepare view renderer
 \Slim\Extras\Views\Twig::$twigOptions = array(
     'charset' => 'utf-8',
-    'cache' => realpath('../tmp/twig'),
+    'cache' => realpath(ROOT_DIR . '/tmp/twig'),
     'auto_reload' => true,
     'strict_variables' => false,
     'autoescape' => true
@@ -74,7 +76,7 @@ $app->get('/downloads', function () use ($app) {
 
 $app->get('/examples', function () use ($app) {
     $examples = new EasyRdf_Graph();
-    $examples->parseFile('../data/examples.ttl', 'turtle');
+    $examples->parseFile(ROOT_DIR . '/data/examples.ttl', 'turtle');
     $app->view()->setData('examples', $examples->allOfType('easyrdf:Example'));
     $app->render('examples.html');
 });
