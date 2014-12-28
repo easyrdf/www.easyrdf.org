@@ -9,9 +9,6 @@ RewriteEngine On
 # Don't redirect to trailing slash if a directory exists
 DirectorySlash Off
 
-# Rewrite rules for API documentation
-RewriteRule ^docs/EasyRdf/(.+)$ docs/api/$1 [R=301,L]
-
 AddType application/rdf+xml .rdf
 AddType text/turtle .ttl
 

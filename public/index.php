@@ -71,6 +71,10 @@ $app->get('/docs', function () use ($app) {
     $controller->indexAction();
 });
 
+$app->get('/docs/EasyRdf/:page', function ($page) use ($app) {
+    $app->redirect("/docs/api/$page", 301);
+});
+
 $app->get('/docs/api', function () use ($app) {
     $app->render('api.html');
 });
