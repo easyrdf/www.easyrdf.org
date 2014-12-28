@@ -61,66 +61,19 @@
         },
         {
             "name": "easyrdf/easyrdf",
-            "version": "0.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/njh/easyrdf.git",
-                "reference": "3e43ab7274004e9f4192e06b9fc147781e1f85c2"
-            },
+            "version": "0.9.0",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/njh/easyrdf/zipball/3e43ab7274004e9f4192e06b9fc147781e1f85c2",
-                "reference": "3e43ab7274004e9f4192e06b9fc147781e1f85c2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.8"
-            },
-            "replace": {
-                "njh/easyrdf": "self.version"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">=3.5.15",
-                "sami/sami": "dev-master",
-                "squizlabs/php_codesniffer": ">=1.4.3"
-            },
-            "suggest": {
-                "ml/json-ld": "dev-master"
+                "type": "tar",
+                "url": "http://www.easyrdf.org/downloads/easyrdf-0.9.0.tar.gz",
+                "reference": null,
+                "shasum": null
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "EasyRdf_": "lib/"
                 }
-            },
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Nicholas Humfrey",
-                    "email": "njh@aelius.com",
-                    "homepage": "http://www.aelius.com/njh/",
-                    "role": "Developer"
                 }
-            ],
-            "description": "EasyRdf is a PHP library designed to make it easy to consume and produce RDF.",
-            "homepage": "http://www.easyrdf.org/",
-            "keywords": [
-                "Linked Data",
-                "RDF",
-                "RDFa",
-                "SPARQL",
-                "Semantic Web",
-                "Turtle"
-            ],
-            "support": {
-                "forum": "http://groups.google.com/group/easyrdf/",
-                "issues": "http://github.com/njh/easyrdf/issues",
-                "irc": "irc://chat.freenode.net/easyrdf",
-                "source": "https://github.com/njh/easyrdf/tree/0.8.0"
-            },
-            "time": "2013-12-30 22:31:37"
         },
         {
             "name": "leafo/lessphp",
