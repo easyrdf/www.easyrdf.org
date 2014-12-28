@@ -23,8 +23,7 @@ composer.phar:
 build-docs: composer-install
 	php scripts/build-docs.php
 
-public/docs/api: composer-install
-	./vendor/bin/sami.php update vendor/easyrdf/easyrdf/config/sami.php -n
+public/docs/api: vendor/easyrdf/easyrdf/docs/api
 	cp -Rf vendor/easyrdf/easyrdf/docs/api public/docs/
 
 public/css/bootstrap.css:
