@@ -29,8 +29,8 @@ public/docs/api: vendor/easyrdf/easyrdf/docs/api
 public/css/bootstrap.css:
 	php scripts/compile-less.php
 
-public/doap.rdf:
-	php vendor/easyrdf/easyrdf/doap.php > $@
+public/doap.rdf: vendor/easyrdf/easyrdf/doap.rdf
+	cp -fp $^ $@
 
 public/packages.json:
 	php scripts/build-packages-data.php
