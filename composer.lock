@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0c83ea7765817b96883825e3bed9fd90",
+    "hash": "8e30130293b47b496ac2b106bb742e37",
+    "content-hash": "cc6a026c9b9f19d2017fb3083185a798",
     "packages": [
         {
             "name": "easyrdf/easyrdf",
@@ -115,17 +116,113 @@
             "time": "2014-05-05 02:43:50"
         },
         {
+            "name": "ml/iri",
+            "version": "1.1.4",
+            "target-dir": "ML/IRI",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lanthaler/IRI.git",
+                "reference": "cbd44fa913e00ea624241b38cefaa99da8d71341"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lanthaler/IRI/zipball/cbd44fa913e00ea624241b38cefaa99da8d71341",
+                "reference": "cbd44fa913e00ea624241b38cefaa99da8d71341",
+                "shasum": ""
+            },
+            "require": {
+                "lib-pcre": ">=4.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ML\\IRI": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Markus Lanthaler",
+                    "email": "mail@markus-lanthaler.com",
+                    "homepage": "http://www.markus-lanthaler.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "IRI handling for PHP",
+            "homepage": "http://www.markus-lanthaler.com",
+            "keywords": [
+                "URN",
+                "iri",
+                "uri",
+                "url"
+            ],
+            "time": "2014-01-21 13:43:39"
+        },
+        {
+            "name": "ml/json-ld",
+            "version": "1.0.3",
+            "target-dir": "ML/JsonLD",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lanthaler/JsonLD.git",
+                "reference": "10a03f7dec0f4a7db6b2e6e6230cdfb7cce562a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lanthaler/JsonLD/zipball/10a03f7dec0f4a7db6b2e6e6230cdfb7cce562a2",
+                "reference": "10a03f7dec0f4a7db6b2e6e6230cdfb7cce562a2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ml/iri": ">=1.1.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "json-ld/tests": "@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ML\\JsonLD": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Markus Lanthaler",
+                    "email": "mail@markus-lanthaler.com",
+                    "homepage": "http://www.markus-lanthaler.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "JSON-LD Processor for PHP",
+            "homepage": "http://www.markus-lanthaler.com",
+            "keywords": [
+                "JSON-LD",
+                "jsonld"
+            ],
+            "time": "2014-09-15 10:41:19"
+        },
+        {
             "name": "njh/twig-html-helpers",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/njh/twig-html-helpers.git",
-                "reference": "523f57d57fce84a298d7c5e5e99d5163e4c50875"
+                "reference": "69d629ac333dd4d698c8aadd63523e8eb0236c4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/njh/twig-html-helpers/zipball/523f57d57fce84a298d7c5e5e99d5163e4c50875",
-                "reference": "523f57d57fce84a298d7c5e5e99d5163e4c50875",
+                "url": "https://api.github.com/repos/njh/twig-html-helpers/zipball/69d629ac333dd4d698c8aadd63523e8eb0236c4b",
+                "reference": "69d629ac333dd4d698c8aadd63523e8eb0236c4b",
                 "shasum": ""
             },
             "require": {
@@ -149,8 +246,7 @@
                 {
                     "name": "Nicholas Humfrey",
                     "email": "njh@aelius.com",
-                    "homepage": "http://www.aelius.com/njh/",
-                    "role": "Developer"
+                    "homepage": "http://www.aelius.com/njh/"
                 }
             ],
             "description": "Rails style view helpers for HTML tags in PHP Twig",
@@ -160,7 +256,7 @@
                 "tag",
                 "twig"
             ],
-            "time": "2013-02-02 22:23:03"
+            "time": "2015-10-27 18:52:01"
         },
         {
             "name": "slim/extras",
@@ -218,12 +314,12 @@
             "version": "2.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/codeguy/Slim.git",
+                "url": "https://github.com/slimphp/Slim.git",
                 "reference": "b8181de1112a1e2f565b40158b621c34ded38053"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim/zipball/b8181de1112a1e2f565b40158b621c34ded38053",
+                "url": "https://api.github.com/repos/slimphp/Slim/zipball/b8181de1112a1e2f565b40158b621c34ded38053",
                 "reference": "b8181de1112a1e2f565b40158b621c34ded38053",
                 "shasum": ""
             },
