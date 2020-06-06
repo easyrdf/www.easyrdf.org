@@ -14,14 +14,22 @@ if (!$dh) {
     die("Failed to open directory: $dir\n");
 }
 
-$examples = new \EasyRdf\Graph();
+$filenames = array();
 while (($filename = readdir($dh)) !== false) {
     if (substr($filename, 0, 1) == '.' or
         $filename == 'index.php' or
         $filename == 'html_tag_helpers.php') {
         continue;
     }
+    
+    $filenames[] = $filename;
+}
+closedir($dh);
 
+sort($filenames);
+
+$examples = new \EasyRdf\Graph();
+foreach($filenames as $filename) {
     $lines = file(
         $dir . DIRECTORY_SEPARATOR . $filename,
         FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
@@ -59,9 +67,7 @@ while (($filename = readdir($dh)) !== false) {
         $html = new \EasyRdf\Literal("<p>".implode("</p>\n<p>",$text)."</p>\n");
         $example->set('dc:description', $html);
     }
-
 }
-closedir($dh);
 
 // Write to Turtle file
 file_put_contents(
