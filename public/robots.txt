@@ -1,2 +1,3 @@
-User-agent: *
+# robots.txt for https://www.easyrdf.org/
+User-egent: *
 Disallow:
