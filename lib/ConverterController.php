@@ -7,7 +7,7 @@ class ConverterController extends BaseController
     {
         $inputFormats = array('guess' => 'Guess');
         $outputFormats = array();
-        foreach (EasyRdf_Format::getFormats() as $format) {
+        foreach (\EasyRdf\Format::getFormats() as $format) {
             if ($format->getParserClass()) {
                 $inputFormats[$format->getName()] = $format->getLabel();
             }
@@ -26,7 +26,7 @@ class ConverterController extends BaseController
         if (isset($params['uri']) or isset($params['data'])) {
             try {
                 // Parse the input
-                $graph = new EasyRdf_Graph($params['uri']);
+                $graph = new \EasyRdf\Graph($params['uri']);
                 $count = 0;
                 if (empty($params['data'])) {
                     $count = $graph->load($params['uri'], $params['in']);
@@ -35,7 +35,7 @@ class ConverterController extends BaseController
                 }
     
                 // Lookup the output format
-                $format = EasyRdf_Format::getFormat($params['out']);
+                $format = \EasyRdf\Format::getFormat($params['out']);
                 if ($format) {
                     // Serialise to the new output format
                     $output = $graph->serialise($format);

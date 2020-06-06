@@ -18,7 +18,7 @@ foreach( glob(ROOT_DIR . '/lib/*.php') as $file ) {
     require $file;
 }
 
-EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
+\EasyRdf\RdfNamespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
 
 // Load information about the bundled version of EasyRdf
 $composer = json_decode(
@@ -90,7 +90,7 @@ $app->get('/downloads', function () use ($app) {
 });
 
 $app->get('/examples', function () use ($app) {
-    $examples = new EasyRdf_Graph();
+    $examples = new \EasyRdf\Graph();
     $examples->parseFile(ROOT_DIR . '/data/examples.ttl', 'turtle');
     $app->view()->setData('examples', $examples->allOfType('easyrdf:Example'));
     $app->render('examples.html');

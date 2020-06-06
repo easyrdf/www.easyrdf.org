@@ -6,7 +6,7 @@
 $root = realpath(__DIR__ . "/..");
 require "$root/vendor/autoload.php";
 
-EasyRdf_Namespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
+\EasyRdf\RdfNamespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
 
 $dir = "$root/vendor/easyrdf/easyrdf/examples/";
 $dh = opendir($dir);
@@ -14,7 +14,7 @@ if (!$dh) {
     die("Failed to open directory: $dir\n");
 }
 
-$examples = new EasyRdf_Graph();
+$examples = new \EasyRdf\Graph();
 while (($filename = readdir($dh)) !== false) {
     if (substr($filename, 0, 1) == '.' or
         $filename == 'index.php' or
@@ -55,8 +55,8 @@ while (($filename = readdir($dh)) !== false) {
 
     $example->set('rdfs:comment', array_shift($text));
     if (!empty($text)) {
-        // FIXME: use EasyRdf_Literal_HTML
-        $html = new EasyRdf_Literal("<p>".implode("</p>\n<p>",$text)."</p>\n");
+        // FIXME: use \EasyRdf\Literal_HTML
+        $html = new \EasyRdf\Literal("<p>".implode("</p>\n<p>",$text)."</p>\n");
         $example->set('dc:description', $html);
     }
 
