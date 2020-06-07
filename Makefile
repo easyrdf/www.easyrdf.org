@@ -18,7 +18,7 @@ update: clean composer.phar
 	php composer.phar $(COMPOSER_FLAGS) update
 
 composer.phar:
-	curl -s -z composer.phar -o composer.phar https://getcomposer.org/composer.phar
+	curl -s -o composer.phar -L https://getcomposer.org/composer-stable.phar
 
 build-docs: composer-install
 	php scripts/build-docs.php
