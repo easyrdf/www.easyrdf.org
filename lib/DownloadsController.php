@@ -14,13 +14,14 @@ class DownloadsController extends BaseController
     protected function getDownloads($limit=NULL)
     {
         $downloads = array();
-        if ($dh = opendir('downloads')) {
+        if ($dh = opendir($this->publicDir() . '/downloads')) {
             while (($filename = readdir($dh)) !== false) {
                 if (preg_match('/^(.+?)\-([^\-]+?)\.([a-z\.]+)$/', $filename, $m)) {
                     list(,$name, $version, $type) = $m;
 
                     // Get release date
-                    $mtime = filemtime("downloads/$filename");
+                    $filepath = $this->publicDir() . "/downloads/$filename";
+                    $mtime = filemtime($filepath);
 
                     $downloads[] = array(
                         'name' => $name,
@@ -29,7 +30,7 @@ class DownloadsController extends BaseController
                         'version' => $version,
                         'type' => $type,
                         'releaseDate' => gmdate('Y-m-d', $mtime),
-                        'size' => $this->humanFilesize("downloads/$filename", 1)
+                        'size' => $this->humanFilesize($filepath, 1)
                      );
                 }
             }
