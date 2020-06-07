@@ -63,8 +63,7 @@ foreach($filenames as $filename) {
 
     $example->set('rdfs:comment', array_shift($text));
     if (!empty($text)) {
-        // FIXME: use \EasyRdf\Literal_HTML
-        $html = new \EasyRdf\Literal("<p>".implode("</p>\n<p>",$text)."</p>\n");
+        $html = new \EasyRdf\Literal\HTML("<p>".implode("</p><p>",$text)."</p>");
         $example->set('dc:description', $html);
     }
 }
