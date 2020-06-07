@@ -99,7 +99,7 @@ $app->get('/examples', function () use ($app) {
 $app->get('/examples/:filename', function ($filename) use ($app) {
     $version = $app->view()->getData('version');
     $app->redirect(
-        "https://github.com/njh/easyrdf/blob/$version/examples/$filename",
+        "https://github.com/easyrdf/easyrdf/blob/$version/examples/$filename",
         302
     );
 });
