@@ -13,4 +13,14 @@ class BaseController
         $this->response = $app->response();
         $this->view = $app->view();
     }
+    
+    public function rootDir()
+    {
+        return realpath(__DIR__ . '/../');
+    }
+    
+    public function publicDir()
+    {
+        return $this->rootDir() . "/public";
+    }
 }

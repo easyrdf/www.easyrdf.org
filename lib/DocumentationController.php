@@ -20,7 +20,7 @@ class DocumentationController extends BaseController
             $this->view->appendData($info);
             $this->view->setData(
                 'text',
-                file_get_contents("docs/".$info['filename'])
+                file_get_contents($this->publicDir() . '/docs/'.$info['filename'])
             );
             $this->app->render('documentation-show.html');
         } else {
@@ -31,7 +31,7 @@ class DocumentationController extends BaseController
     protected function getDocumentation()
     {
         $docs = array();
-        if ($dh = opendir('docs')) {
+        if ($dh = opendir($this->publicDir() . '/docs')) {
             while (($filename = readdir($dh)) !== false) {
                 if (preg_match('/^(\d+)\-(.+?)\.(\w+)$/', $filename, $m)) {
                     list(,$index, $name, $format) = $m;
@@ -59,21 +59,21 @@ class DocumentationController extends BaseController
     protected function getClasses()
     {
         $classes = array();
-        if ($dh = opendir('docs/api')) {
-            while (($filename = readdir($dh)) !== false) {
-                if (preg_match('/^(EasyRdf_\w+)/', $filename, $m)) {
-                    $classes[] = array(
-                        'name' => $m[1],
-                        'path' => "/docs/api/$filename",
-                        'depth' => substr_count($m[1], '_')
-                    );
-                }
-            }
-            closedir($dh);
+        $dir = $this->publicDir() . '/docs/api/EasyRdf/';
+        $filenames = glob($dir . '{,*/,*/*/}*.html', GLOB_BRACE);
+        foreach($filenames as $filename) {
+            $subpath = substr($filename, strlen($dir));
+            $name = 'EasyRdf\\' . str_replace('/', '\\', str_replace('.html', '', $subpath));
+            $classes[$name] = array(
+                'name' => $name,
+                'path' => "/docs/api/EasyRdf/$subpath",
+                'depth' => substr_count($subpath, '/')
+            );
+        
         }
 
         // Sort by name
-        sort($classes);
+        ksort($classes);
 
         return $classes;
     }
