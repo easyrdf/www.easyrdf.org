@@ -9,8 +9,7 @@ require "$root/vendor/autoload.php";
 $inputDir = "$root/vendor/easyrdf/easyrdf/docs";
 $outputDir = "$root/public/docs";
 
-use \Michelf\Markdown;
-
+$Parsedown = new Parsedown();
 
 $dh = opendir($inputDir);
 if (!$dh) {
@@ -32,15 +31,15 @@ while (($filename = readdir($dh)) !== false) {
 
     echo "  $filename\n";
     $markdown = file_get_contents($inputPath);
-    $html = Markdown::defaultTransform($markdown);
-    
-    // FIXME: better way to pretty print PHP code?
-    $html = str_replace(
-        '<pre><code>&lt;?php',
-        '<pre class="prettyprint"><code>&lt;?php',
-        $html
+    $html = $Parsedown->text($markdown);
+
+    // FIXME: find better way to pretty print code?
+    $html = preg_replace(
+      '/<code class="language-(\w+)">/i',
+      '<code class="language-${1} prettyprint">',
+      $html
     );
-    
+
     file_put_contents($outputPath, $html);
 }
 closedir($dh);
