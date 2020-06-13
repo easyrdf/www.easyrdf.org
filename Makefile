@@ -23,11 +23,17 @@ composer.phar:
 build-docs: composer-install
 	php scripts/build-docs.php
 
+vendor/easyrdf/easyrdf/docs/api:
+	make -C vendor/easyrdf/easyrdf apidocs
+
 public/docs/api: vendor/easyrdf/easyrdf/docs/api
 	cp -Rf vendor/easyrdf/easyrdf/docs/api public/docs/
 
 public/css/bootstrap.css:
 	php scripts/compile-less.php
+
+vendor/easyrdf/easyrdf/doap.rdf:
+	make -C vendor/easyrdf/easyrdf doap.rdf
 
 public/doap.rdf: vendor/easyrdf/easyrdf/doap.rdf
 	cp -fp $^ $@
