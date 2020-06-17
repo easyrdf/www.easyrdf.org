@@ -16,20 +16,36 @@
   padding: 0;
 }
 
-.forkme {
-  position: absolute;
-  top: 0;
-  right: 0;
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
 }
 
-.forkme img {
-  border: 0;
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0)
+  }
+  20%, 60% {
+    transform: rotate(-25deg)
+  }
+  40%, 80% {
+    transform: rotate(10deg)
+  }
 }
 
-/* Hide Fork Me ribbon on small screens and print */
+@media (max-width:500px) {
+  .github-corner:hover .octo-arm {
+    animation: none
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+}
+
+/* Hide Github Corner on small screens and print */
 @media not screen, (max-width: 800px) {
-  .forkme { display: none; }
+  .github-corner { display: none; }
 }
+
 
 .hero-unit {
   background: #474b51;
