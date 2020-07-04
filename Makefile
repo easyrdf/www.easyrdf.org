@@ -51,6 +51,7 @@ clean:
 	rm -f composer.phar
 	rm -Rf vendor/
 	rm -Rf public/docs/api
+	rm -f public/docs/*.html
 	rm -f public/css/bootstrap.css
 	rm -f public/doap.rdf
 	rm -f public/js/bootstrap-collapse.js
