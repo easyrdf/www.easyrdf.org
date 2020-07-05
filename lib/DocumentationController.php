@@ -39,6 +39,10 @@ class DocumentationController extends BaseController
            $assocArray[$doc->localName()] = $doc;
         }
 
+        uasort($assocArray, function ($a, $b) {		
+           return $a->get('foaf:index') <=> $b->get('foaf:index');		
+        });
+  
         return $assocArray;
     }
 
