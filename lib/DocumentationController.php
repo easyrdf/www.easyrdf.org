@@ -5,22 +5,22 @@ class DocumentationController extends BaseController
 
     public function indexAction()
     {
-        $index = $this->getDocumentation();
-        $this->view->setData('items', $index);
+        $docs = $this->getDocumentation();
+        $this->view->setData('docs', $docs);
         $this->view->setData('classes', $this->getClasses());
         $this->app->render('documentation-index.html');
     }
 
     public function showAction($name)
     {
-        $index = $this->getDocumentation();
-        if (array_key_exists($name, $index)) {
-            $info = $index[$name];
-            $this->view->setData('items', $index);
-            $this->view->appendData($info);
+        $docs = $this->getDocumentation();
+        if (array_key_exists($name, $docs)) {
+            $doc = $docs[$name];
+            $this->view->setData('doc', $doc);
+            $this->view->setData('docs', $docs);
             $this->view->setData(
                 'text',
-                file_get_contents($this->publicDir() . '/docs/'.$info['filename'])
+                file_get_contents($doc->get('foaf:localFile'))
             );
             $this->app->render('documentation-show.html');
         } else {
@@ -30,30 +30,16 @@ class DocumentationController extends BaseController
 
     protected function getDocumentation()
     {
-        $docs = array();
-        if ($dh = opendir($this->publicDir() . '/docs')) {
-            while (($filename = readdir($dh)) !== false) {
-                if (preg_match('/^(\d+)\-(.+?)\.(\w+)$/', $filename, $m)) {
-                    list(,$index, $name, $format) = $m;
+        $docs = new \EasyRdf\Graph();
+        $docs->parseFile(ROOT_DIR . '/data/documentation.ttl', 'turtle');
 
-                    $docs[$name] = array(
-                        'filename' => $filename,
-                        'index' => $index,
-                        'name' => $name,
-                        'title' => ucwords(str_replace('-', ' ', strtolower($name))),
-                        'format' => $format
-                     );
-                }
-            }
-            closedir($dh);
+        // FIXME: is there a built-in PHP function for doing this?
+        $assocArray = array();
+        foreach($docs->allOfType('foaf:Document') as $doc) {
+           $assocArray[$doc->localName()] = $doc;
         }
 
-        // Sort by filename
-        uasort($docs, function ($a, $b) {
-            return strcmp($a['filename'], $b['filename']);
-        });
-
-        return $docs;
+        return $assocArray;
     }
 
     protected function getClasses()

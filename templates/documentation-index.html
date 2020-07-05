@@ -10,8 +10,8 @@ Documentation
   <h1>Documentation</h1>
 
   <ul>
-    {% for item in items %}
-    <li><a href="{{ rootUrl~'/docs/'~item.name }}">{{ item.title }}</a></li>
+    {% for doc in docs %}
+    <li><a href="{{ rootUrl~doc.parseUri().getPath() }}">{{ doc.label() }}</a></li>
     {% endfor %}
   </ul>
 </div>

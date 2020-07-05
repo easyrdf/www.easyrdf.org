@@ -3,7 +3,7 @@ COMPOSER_FLAGS=--no-ansi --verbose --no-interaction
 all: build
 
 build: composer-install \
-       build-docs \
+       build-documentation \
        public/docs/api \
        public/css/bootstrap.css \
        public/packages.json \
@@ -20,8 +20,8 @@ update: clean composer.phar
 composer.phar:
 	curl -s -o composer.phar -L https://getcomposer.org/composer-stable.phar
 
-build-docs: composer-install
-	php scripts/build-docs.php
+build-documentation: composer-install
+	php scripts/build-documentation.php
 
 vendor/easyrdf/easyrdf/docs/api:
 	make -C vendor/easyrdf/easyrdf apidocs
@@ -56,7 +56,7 @@ clean:
 	rm -f public/doap.rdf
 	rm -f public/js/bootstrap-collapse.js
 	rm -f public/packages.json
-	rm -f data/examples.ttl
+	rm -f data/*.ttl
 	rm -f logs/*
 	rm -Rf tmp/twig/*
 

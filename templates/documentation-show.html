@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block title %}
-Documentation - {{ title }}
+Documentation - {{ doc.label() }}
 {% endblock %}
 
 {% block content %}
 
 <div class="span3 sidenav">
   <ul class="nav nav-tabs nav-stacked">
-    {% for item in items %}
-    <li><a href="{{ item.name }}"><i class="icon-chevron-right"></i> {{ item.title }}</a></li>
+    {% for doc in docs %}
+    <li><a href="{{ rootUrl~doc.parseUri().getPath() }}"><i class="icon-chevron-right"></i> {{ doc.label() }}</a></li>
     {% endfor %}
     <li><a href="{{ rootUrl~"/docs/api" }}"><i class="icon-chevron-right"></i> API Reference</a></li>
   </ul>
