@@ -10,11 +10,11 @@ Examples
 {% for example in examples %}
   <li>
     <h3>{{ example.get('rdfs:comment') }}</h3>
-    <div class="row-fluid">
-      <div class="span9">
+    <div class="row">
+      <div class="col-9">
         {{ example.get('dc:description')|raw }}
       </div>
-      <div class="span3">
+      <div class="col-3">
         <a class="btn btn-info btn-block" href="./examples/{{example.localName}}">
           View &raquo;<br />
           <span class="filename"><i class="icon-file icon-white"></i> {{example.localName}}</span>

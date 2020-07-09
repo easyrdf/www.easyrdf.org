@@ -9,7 +9,7 @@ build: composer-install \
        public/packages.json \
        data/examples.ttl \
        public/doap.rdf \
-       public/js/bootstrap-collapse.js
+       public/js/bootstrap.bundle.min.js
 
 composer-install: composer.phar
 	php composer.phar $(COMPOSER_FLAGS) install
@@ -29,8 +29,8 @@ vendor/easyrdf/easyrdf/docs/api:
 public/docs/api: vendor/easyrdf/easyrdf/docs/api
 	cp -Rf vendor/easyrdf/easyrdf/docs/api public/docs/
 
-public/css/bootstrap.css:
-	php scripts/compile-less.php
+public/css/bootstrap.css: scss/bootstrap-custom.scss
+	cp -fp vendor/twbs/bootstrap/dist/css/bootstrap.css $@
 
 vendor/easyrdf/easyrdf/doap.rdf:
 	make -C vendor/easyrdf/easyrdf doap.rdf
@@ -44,7 +44,7 @@ public/packages.json:
 data/examples.ttl:
 	php scripts/build-example-data.php
 
-public/js/bootstrap-collapse.js: vendor/twitter/bootstrap/js/bootstrap-collapse.js
+public/js/bootstrap.bundle.min.js: vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js
 	cp -fp $^ $@
 
 clean:

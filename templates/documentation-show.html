@@ -6,17 +6,26 @@ Documentation - {{ doc.label() }}
 
 {% block content %}
 
-<div class="span3 sidenav">
-  <ul class="nav nav-tabs nav-stacked">
-    {% for doc in docs %}
-    <li><a href="{{ rootUrl~doc.parseUri().getPath() }}"><i class="icon-chevron-right"></i> {{ doc.label() }}</a></li>
-    {% endfor %}
-    <li><a href="{{ rootUrl~"/docs/api" }}"><i class="icon-chevron-right"></i> API Reference</a></li>
-  </ul>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-3 sidenav">
+      <ul class="nav nav-pills flex-column">
+        {% for doc in docs %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ rootUrl~doc.parseUri().getPath() }}"><i class="icon-chevron-right"></i> {{ doc.label() }}</a>
+        </li>
+        {% endfor %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ rootUrl~"/docs/api" }}"><i class="icon-chevron-right"></i> API Reference</a>
+        </li>
+      </ul>
+    </div>
 
-<div class="span8">
-{{ text|raw }}
+    <div class="col-8">
+    {{ text|raw }}
+    </div>
+  
+  </div>
 </div>
 
 {% endblock %}

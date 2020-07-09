@@ -1,19 +1,7 @@
-.navbar {
-  position: static;
-  margin-bottom: 20px;
-}
-
-.navbar .brand {
-  text-indent: -10000px;
-  direction: ltr;
+.navbar-brand {
   background: url(../img/logo-small-long.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
   width: 150px;
   height: 40px;
-  margin: 0;
-  padding: 0;
 }
 
 .github-corner:hover .octo-arm {

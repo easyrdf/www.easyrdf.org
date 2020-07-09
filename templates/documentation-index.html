@@ -6,7 +6,7 @@ Documentation
 
 {% block content %}
 
-<div class="section">
+<div class="container">
   <h1>Documentation</h1>
 
   <ul>
@@ -17,7 +17,7 @@ Documentation
 </div>
 
 
-<div class="section">
+<div class="container">
   <h2>API Reference</h2>
 
   <p>
@@ -25,6 +25,7 @@ Documentation
     click on one of the classes below:
   </p>
 
+  <ul>
   {% set depth = 0 %}
   {% for class in classes %}
     {% if class.depth > depth %}

@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8"/>
     <title>EasyRdf - {% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Stylesheets -->
     <link href="{{rootUrl}}/css/bootstrap.css" type="text/css" rel="stylesheet" media="screen">
-    <link href="{{rootUrl}}/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
     <link href="{{rootUrl}}/css/prettify.css" type="text/css" rel="stylesheet">
     <link href="{{rootUrl}}/css/easyrdf.css" type="text/css" rel="stylesheet">
 
@@ -23,27 +22,24 @@
 
   <body onload="prettyPrint()">
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="{{rootUrl}}/">EasyRdf</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="{{rootUrl}}/docs">Documentation</a></li>
-              <li><a href="{{rootUrl}}/examples">Examples</a></li>
-              <li><a href="{{rootUrl}}/converter">Converter</a></li>
-              <li><a href="{{rootUrl}}/support">Support</a></li>
-              <li><a href="{{rootUrl}}/downloads">Downloads</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+      <a class="navbar-brand text-hide" href="{{rootUrl}}/">EasyRdf</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="{{rootUrl}}/docs">Documentation</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/examples">Examples</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/converter">Converter</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/support">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/downloads">Downloads</a></li>
+        </ul>
       </div>
-    </div>
+
+      </div>
+    </nav>
 
     <div class="forkme">
       <a href="https://github.com/easyrdf/easyrdf" class="github-corner" aria-label="View source on GitHub">
@@ -62,7 +58,7 @@
     </footer>
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="{{rootUrl}}/js/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="{{rootUrl}}/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{rootUrl}}/js/prettify.js"></script>
     
     {% include 'google-analytics.html' %}

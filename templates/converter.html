@@ -9,32 +9,32 @@ Converter
 <h1>Converter</h1>
 
 {% if error %}
-<div class="alert alert-block span9">
+<div class="alert alert-block col-9">
   <strong>Error!</strong>
   {{ error }}
 </div>
 {% endif %}
 
 <div class="container">
-  <div class="span9 well well-large">
+  <div class="col-9 well well-large">
     <form method="POST" accept-charset="utf-8" action="{{rootUrl}}/converter">
-      <div class="row-fluid">
+      <div class="row">
         <label for="data">Input Data:</label>
         {{ text_area_tag('data', '', {rows: '7', class: 'span9'}) }}
       </div>
-      <div class="row-fluid">
+      <div class="row">
         <label for="uri">or Uri:</label>
         {{ text_field_tag('uri', 'http://njh.me/', {class: 'span9'}) }}
       </div>
-      <div class="row-fluid">
+      <div class="row">
         <label class="control-label" for="in">Input Format:</label>
         {{ select_tag('in', inputFormats, defaultInputFormat, {class: 'span9'}) }}
       </div>
-      <div class="row-fluid">
+      <div class="row">
         <label class="control-label" for="out">Output Format:</label>
         {{ select_tag('out', outputFormats, defaultOutputFormat, {class: 'span9'}) }}
       </div>
-      <div class="row-fluid">
+      <div class="row">
         <label class="checkbox" for="raw">
           Raw output {{ check_box_tag('raw') }}
         </label>
