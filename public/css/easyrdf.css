@@ -35,13 +35,13 @@
 }
 
 
-.hero-unit {
+.jumbotron {
   background: #474b51;
   padding: 1em;
   border-radius: 20px;
 }
 
-.hero-unit h1 {
+.jumbotron h1 {
   text-indent: -10000px;
   direction: ltr;
   background: url(../img/logo.png);
@@ -52,18 +52,18 @@
   display: block;
 }
 
-.hero-unit h2 {
+.jumbotron h2 {
   color: white;
   font-size: 18pt;
   margin-top: 1em;
 }
 
-.hero-unit h2 strong {
+.jumbotron h2 strong {
   color: #ff6000; /* orange */
   font-weight: normal;
 }
 
-.hero-unit p {
+.jumbotron p {
   color: #AAA;
   padding-top: 20px;
 }
