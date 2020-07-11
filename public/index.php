@@ -76,7 +76,8 @@ $app->get('/docs/EasyRdf/:page', function ($page) use ($app) {
 });
 
 $app->get('/docs/api', function () use ($app) {
-    $app->render('api.html');
+    $app->redirect("/docs/api/classes.html", 301);
+});
 });
 
 $app->get('/docs/:name', function ($name) use ($app) {
