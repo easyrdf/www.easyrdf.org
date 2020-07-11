@@ -78,6 +78,10 @@ $app->get('/docs/EasyRdf/:page', function ($page) use ($app) {
 $app->get('/docs/api', function () use ($app) {
     $app->redirect("/docs/api/classes.html", 301);
 });
+
+$app->get('/docs/api/EasyRdf_:class.html', function ($class) use ($app) {
+    $filepath = "EasyRdf/" . str_replace('_', '/', $class) . ".html";
+    $app->redirect("/docs/api/$filepath", 301);
 });
 
 $app->get('/docs/:name', function ($name) use ($app) {
