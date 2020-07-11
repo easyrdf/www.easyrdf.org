@@ -53,7 +53,7 @@ RDF Library for PHP
       <div id="example">
         <h2>Example</h2>
 <code><pre class="prettyprint p-2" style="font-size: 90%">
-$foaf = new EasyRdf_Graph("http://njh.me/foaf.rdf");
+$foaf = new EasyRdf\Graph("http://njh.me/foaf.rdf");
 $foaf->load();
 $me = $foaf->primaryTopic();
 echo "My name is: ".$me->get('foaf:name')."\n";
