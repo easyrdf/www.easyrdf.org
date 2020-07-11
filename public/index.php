@@ -109,13 +109,14 @@ $app->get('/support', function () use ($app) {
 });
 
 // Remove trailing slashes
-$app->get('/:path+/', function ($path) use ($app) {
-    $rootUrl = $app->view()->getData('rootUrl');
-    $app->redirect(
-        $rootUrl . '/' . implode('/', array_splice($path, 0, -1)),
-        301
-    );
-});
+// FIXME: this doesn't work properly
+// $app->get('/:path+/', function ($path) use ($app) {
+//     $rootUrl = $app->view()->getData('rootUrl');
+//     $app->redirect(
+//         $rootUrl . '/' . implode('/', array_splice($path, 0, -1)),
+//         301
+//     );
+// });
 
 $app->notFound(function () use ($app) {
     $app->render('404.html');
