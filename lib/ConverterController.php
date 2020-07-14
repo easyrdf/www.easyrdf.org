@@ -7,6 +7,12 @@ class ConverterController extends BaseController
     {
         $inputFormats = array('guess' => 'Guess');
         $outputFormats = array();
+
+        // The 'dot' command is not available on the server that this site is hosted on
+        \EasyRdf\Format::unregister('gif');
+        \EasyRdf\Format::unregister('png');
+        \EasyRdf\Format::unregister('svg');
+
         foreach (\EasyRdf\Format::getFormats() as $format) {
             if ($format->getParserClass()) {
                 $inputFormats[$format->getName()] = $format->getLabel();
