@@ -1,3 +1,13 @@
+{%
+  set navSections = {
+    'docs': 'Documentation',
+    'examples': 'Examples',
+    'converter': 'Converter',
+    'support': 'Support',
+    'downloads': 'Downloads'
+  }
+%}
+
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
       <a class="navbar-brand text-hide" href="{{rootUrl}}/">EasyRdf</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,11 +16,11 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a class="nav-link" href="{{rootUrl}}/docs">Documentation</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/examples">Examples</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/converter">Converter</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/support">Support</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{rootUrl}}/downloads">Downloads</a></li>
+          {% for path,title in navSections %}
+            <li class="nav-item {{ path == section ? 'active' }}">
+              <a class="nav-link" href="{{rootUrl}}/{{path}}">{{title}}</a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </nav>
