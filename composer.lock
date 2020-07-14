@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a8fc297c46275a74e5a04a9b48759d0",
+    "content-hash": "d64c3e629cc7f48ff60c5193ca71cba5",
     "packages": [
         {
             "name": "easyrdf/easyrdf",
-            "version": "1.0.0-rc.1",
+            "version": "1.0.0",
             "dist": {
                 "type": "tar",
-                "url": "https://github.com/easyrdf/easyrdf/releases/download/1.0.0-rc.1/easyrdf-1.0.0-rc.1.tar.gz"
+                "url": "https://github.com/easyrdf/easyrdf/releases/download/1.0.0/easyrdf-1.0.0.tar.gz"
             },
             "type": "library",
             "autoload": {
@@ -422,7 +422,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "easyrdf/easyrdf": 5,
         "njh/twig-html-helpers": 20
     },
     "prefer-stable": false,
