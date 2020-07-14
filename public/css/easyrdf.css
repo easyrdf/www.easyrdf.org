@@ -42,20 +42,17 @@
 }
 
 .jumbotron h1 {
-  text-indent: -10000px;
-  direction: ltr;
-  background: url(../img/logo.png);
+  background-image: url(../img/logo.png);
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: center center;
-  height:165px;
-  display: block;
+  height: 154px;
+  width: 341px;
 }
 
 .jumbotron h2 {
   color: white;
-  font-size: 18pt;
-  margin-top: 1em;
+  font-size: 20pt;
+  line-height: 42px;
 }
 
 .jumbotron h2 strong {
@@ -65,11 +62,6 @@
 
 .jumbotron p {
   color: #AAA;
-  padding-top: 20px;
-}
-
-.buttonPara {
-  text-align: center;
 }
 
 .btn .filename {
