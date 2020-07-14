@@ -18,7 +18,7 @@ foreach( glob(ROOT_DIR . '/lib/*.php') as $file ) {
     require $file;
 }
 
-\EasyRdf\RdfNamespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
+\EasyRdf\RdfNamespace::set('easyrdf', 'https://www.easyrdf.org/ns#');
 
 // Load information about the bundled version of EasyRdf
 $composer = json_decode(

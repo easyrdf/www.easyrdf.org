@@ -6,7 +6,7 @@
 $root = realpath(__DIR__ . "/..");
 require "$root/vendor/autoload.php";
 
-\EasyRdf\RdfNamespace::set('easyrdf', 'http://www.easyrdf.org/ns#');
+\EasyRdf\RdfNamespace::set('easyrdf', 'https://www.easyrdf.org/ns#');
 
 $dir = "$root/vendor/easyrdf/easyrdf/examples/";
 $dh = opendir($dir);
