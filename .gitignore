@@ -8,6 +8,7 @@ composer.phar
 
 # Generated files
 data/examples.ttl
+data/documentation.ttl
 public/css/bootstrap.css
 public/css/bootstrap-responsive.css
 public/js/bootstrap.bundle.min.js
