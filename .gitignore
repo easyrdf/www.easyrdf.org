@@ -10,7 +10,7 @@ composer.phar
 data/examples.ttl
 public/css/bootstrap.css
 public/css/bootstrap-responsive.css
-public/js/bootstrap-collapse.js
+public/js/bootstrap.bundle.min.js
 public/doap.rdf
 public/docs/*.html
 public/docs/api/*
