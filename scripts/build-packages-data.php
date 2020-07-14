@@ -31,7 +31,7 @@ while (($filename = readdir($dh)) !== false) {
     // Add distribution information
     $composer['dist'] = array(
         'type' => 'tar',
-        'url' => "http://www.easyrdf.org/downloads/$filename"
+        'url' => "https://www.easyrdf.org/downloads/$filename"
     );
 
     // Add release date, based on when root directory, in the tar, was created

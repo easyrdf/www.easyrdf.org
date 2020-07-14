@@ -35,7 +35,7 @@ foreach($filenames as $filename) {
         FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
     );
 
-    $example = $examples->resource("http://www.easyrdf.org/examples/$filename", 'easyrdf:Example');
+    $example = $examples->resource("https://www.easyrdf.org/examples/$filename", 'easyrdf:Example');
 
     $startDoc = false;
     $tags = array();
