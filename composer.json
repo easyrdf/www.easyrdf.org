@@ -17,17 +17,17 @@
     {
       "type": "package",
       "package": {
-          "name": "easyrdf/easyrdf",
-          "version": "1.0.0-rc.1",
-          "dist": {
-              "url": "https://github.com/easyrdf/easyrdf/releases/download/1.0.0-rc.1/easyrdf-1.0.0-rc.1.tar.gz",
-              "type": "tar"
-          },
-	  "autoload": {
-              "psr-4": {
-                  "EasyRdf\\": "lib"
-              }
+        "name": "easyrdf/easyrdf",
+        "version": "1.0.0-rc.1",
+        "dist": {
+          "url": "https://github.com/easyrdf/easyrdf/releases/download/1.0.0-rc.1/easyrdf-1.0.0-rc.1.tar.gz",
+          "type": "tar"
+        },
+        "autoload": {
+          "psr-4": {
+            "EasyRdf\\": "lib"
           }
+        }
       }
     }
   ]
