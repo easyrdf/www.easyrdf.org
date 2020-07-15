@@ -8,6 +8,7 @@
     "erusev/parsedown": "^1.7.4",
     "ml/json-ld": "1.*",
     "njh/twig-html-helpers": "dev-master",
+    "scssphp/scssphp": "^1",
     "slim/extras": "2.0.3",
     "slim/slim": "2.2.0",
     "twig/twig": "1.16.3",

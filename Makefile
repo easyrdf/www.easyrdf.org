@@ -30,7 +30,10 @@ public/docs/api: vendor/easyrdf/easyrdf/docs/api
 	cp -Rf vendor/easyrdf/easyrdf/docs/api public/docs/
 
 public/css/bootstrap.css: scss/bootstrap-custom.scss
-	cp -fp vendor/twbs/bootstrap/dist/css/bootstrap.css $@
+	php scripts/compile-scss.php
+
+public/js/bootstrap.bundle.min.js: vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js
+	cp -fp $^ $@
 
 vendor/easyrdf/easyrdf/doap.rdf:
 	make -C vendor/easyrdf/easyrdf doap.rdf
@@ -43,9 +46,6 @@ public/packages.json:
 
 data/examples.ttl:
 	php scripts/build-example-data.php
-
-public/js/bootstrap.bundle.min.js: vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js
-	cp -fp $^ $@
 
 clean:
 	rm -f composer.phar
