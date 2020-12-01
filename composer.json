@@ -1,10 +1,10 @@
 {
   "name": "easyrdf/www.easyrdf.org",
   "type": "project",
-  "homepage": "http://www.easyrdf.org/",
+  "homepage": "https://www.easyrdf.org/",
   "require": {
     "php": ">=5.3.0",
-    "easyrdf/easyrdf": "1.0.0",
+    "easyrdf/easyrdf": "1.1.0",
     "erusev/parsedown": "^1.7.4",
     "ml/json-ld": "1.*",
     "njh/twig-html-helpers": "dev-master",
@@ -19,9 +19,9 @@
       "type": "package",
       "package": {
         "name": "easyrdf/easyrdf",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "dist": {
-          "url": "https://github.com/easyrdf/easyrdf/releases/download/1.0.0/easyrdf-1.0.0.tar.gz",
+          "url": "https://github.com/easyrdf/easyrdf/releases/download/1.1.0/easyrdf-1.1.0.tar.gz",
           "type": "tar"
         },
         "autoload": {
